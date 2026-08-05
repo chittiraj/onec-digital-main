@@ -1,14 +1,16 @@
-export function generateWhatsAppMessage(
+export function generateWhatsAppMessage(orderData) {
 
-    customer,
+    const {
 
-    cartItems,
+        customer,
 
-    totalItems,
+        cartItems,
 
-    totalPrice
+        totalItems,
 
-) {
+        totalPrice
+
+    } = orderData;
 
     if (!cartItems || cartItems.length === 0) {
 
@@ -48,15 +50,15 @@ export function generateWhatsAppMessage(
 
     message += `👤 *Customer Details*\n\n`;
 
-    message += `👤 Name : ${customer.fullName}\n`;
+    message += `👤 Name : ${customer?.fullName || ""}\n`;
 
-    message += `📞 Phone : ${customer.phone}\n`;
+    message += `📞 Phone : ${customer?.phone || ""}\n`;
 
-    message += `🏠 Address : ${customer.address}\n`;
+    message += `🏠 Address : ${customer?.address || ""}\n`;
 
-    message += `🏙️ City : ${customer.city}\n`;
+    message += `🏙️ City : ${customer?.city || ""}\n`;
 
-    message += `📮 Pincode : ${customer.pincode}\n\n`;
+    message += `📮 Pincode : ${customer?.pincode || ""}\n\n`;
 
     message += `━━━━━━━━━━━━━━━━━━\n\n`;
 
