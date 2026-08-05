@@ -49,52 +49,92 @@ function CheckoutForm() {
         /* ================= Validation ================= */
 
         if (!customer.fullName.trim()) {
+
             alert("Please enter your Full Name.");
+
             return;
+
         }
 
         if (!customer.phone.trim()) {
+
             alert("Please enter your Phone Number.");
+
             return;
+
         }
 
         if (!customer.address.trim()) {
+
             alert("Please enter your Address.");
+
             return;
+
         }
 
         if (!customer.city.trim()) {
+
             alert("Please enter your City.");
+
             return;
+
         }
 
         if (!customer.pincode.trim()) {
+
             alert("Please enter your Pincode.");
+
             return;
+
         }
 
         if (cartItems.length === 0) {
+
             alert("Your cart is empty.");
+
             return;
+
         }
 
-        /* ================= Generate WhatsApp Message ================= */
+        /* ================= Order Data ================= */
 
-        /* ================= Generate WhatsApp Message ================= */
+        const orderData = {
 
-        const message = generateWhatsAppMessage(
             customer,
+
             cartItems,
+
             totalItems,
+
             totalPrice
-        );
+
+        };
+
+        /* ================= WhatsApp ================= */
 
         const phoneNumber = "917993669326";
 
-        const whatsappUrl =
-            `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+        const message = generateWhatsAppMessage(orderData);
 
-        window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+        const whatsappUrl =
+            `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+        const newWindow = window.open(
+
+            whatsappUrl,
+
+            "_blank",
+
+            "noopener,noreferrer"
+
+        );
+
+        if (!newWindow) {
+
+            window.location.href = whatsappUrl;
+
+        }
+
     };
 
     return (
@@ -106,6 +146,8 @@ function CheckoutForm() {
                 Customer Details
 
             </h3>
+
+            {/* ================= Name & Phone ================= */}
 
             <div className="checkout-row">
 
@@ -159,6 +201,8 @@ function CheckoutForm() {
 
             </div>
 
+            {/* ================= Address ================= */}
+
             <div className="form-group">
 
                 <label>
@@ -182,6 +226,8 @@ function CheckoutForm() {
                 />
 
             </div>
+
+            {/* ================= City & Pincode ================= */}
 
             <div className="checkout-row">
 
@@ -234,6 +280,8 @@ function CheckoutForm() {
                 </div>
 
             </div>
+
+            {/* ================= Button ================= */}
 
             <button
 
