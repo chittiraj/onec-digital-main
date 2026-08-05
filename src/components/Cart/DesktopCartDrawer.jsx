@@ -10,9 +10,12 @@ import {
 
 import useCart from "../../hooks/useCart";
 
-import { generateWhatsAppMessage } from "../../utils/whatsappMessage";
+import {
 
-import { Link } from "react-router-dom";
+    Link,
+    useNavigate
+
+} from "react-router-dom";
 
 function DesktopCartDrawer({
 
@@ -38,32 +41,21 @@ function DesktopCartDrawer({
 
     } = useCart();
 
-    const handleWhatsApp = () => {
+    const navigate = useNavigate();
 
-        const phoneNumber = "917993669326";
+    const goToCheckout = () => {
 
-        const message = generateWhatsAppMessage(cartItems);
+        setIsCartOpen(false);
 
-        const whatsappUrl =
-            `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-
-        const newWindow = window.open(
-            whatsappUrl,
-            "_blank",
-            "noopener,noreferrer"
-        );
-
-        if (!newWindow) {
-
-            window.location.href = whatsappUrl;
-
-        }
+        navigate("/checkout");
 
     };
 
     return (
 
         <>
+
+            {/* ================= Overlay ================= */}
 
             <div
 
@@ -72,6 +64,8 @@ function DesktopCartDrawer({
                 onClick={() => setIsCartOpen(false)}
 
             />
+
+            {/* ================= Sidebar ================= */}
 
             <div
 
@@ -104,7 +98,8 @@ function DesktopCartDrawer({
                     </button>
 
                 </div>
-                                {/* ================= Empty Cart ================= */}
+
+                {/* ================= Empty Cart ================= */}
 
                 {
 
@@ -259,7 +254,8 @@ function DesktopCartDrawer({
                                     }
 
                                 </div>
-                                                                {/* ================= Footer ================= */}
+
+                                {/* ================= Footer ================= */}
 
                                 <div className="cart-footer">
 
@@ -299,11 +295,11 @@ function DesktopCartDrawer({
 
                                         className="whatsapp-btn"
 
-                                        onClick={handleWhatsApp}
+                                        onClick={goToCheckout}
 
                                     >
 
-                                        Order on WhatsApp
+                                        Proceed to Checkout
 
                                     </button>
 

@@ -38,7 +38,7 @@ function Contact() {
 
                             <Mail size={20} />
 
-                            <span>support@kumarputarekulu.com</span>
+                            <span>kumarneethiputharekuki@gmail.com</span>
 
                         </div>
 
