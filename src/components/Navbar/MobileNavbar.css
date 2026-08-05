@@ -1,0 +1,175 @@
+/* ==========================================
+            Mobile Navbar
+========================================== */
+
+.mobile-navbar{
+
+    width:100%;
+
+    background:#FFF;
+
+    border-bottom:1px solid #ECECEC;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:999;
+
+}
+
+.mobile-navbar-container{
+
+    height:70px;
+
+    padding:0 18px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    position:relative;
+
+}
+
+/* ==========================================
+            Hamburger
+========================================== */
+
+.mobile-menu-btn{
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    background:transparent;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#3D251E;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+
+}
+
+.mobile-menu-btn:hover{
+
+    background:#FFF5EA;
+
+    color:#B67C45;
+
+}
+
+/* ==========================================
+            Logo
+========================================== */
+
+.mobile-logo-link{
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.mobile-logo{
+
+    height:68px;
+
+    width:auto;
+
+}
+
+/* ==========================================
+            Cart
+========================================== */
+
+.mobile-cart{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#3D251E;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+
+}
+
+.mobile-cart:hover{
+
+    color:#B67C45;
+
+}
+
+.mobile-cart .cart-count{
+
+    position:absolute;
+
+    top:-8px;
+
+    right:-10px;
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    background:#8B4513;
+
+    color:#FFF;
+
+    font-size:11px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+/* ==========================================
+            Touch Friendly
+========================================== */
+
+.mobile-menu-btn,
+.mobile-cart{
+
+    -webkit-tap-highlight-color:transparent;
+
+}
+
+.mobile-menu-btn:focus,
+.mobile-cart:focus{
+
+    outline:none;
+
+}
