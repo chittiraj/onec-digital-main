@@ -91,19 +91,11 @@ function CheckoutForm() {
 
         const phoneNumber = "917993669326";
 
-        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        const whatsappUrl =
+            `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
-        console.log("WhatsApp URL:", whatsappUrl);
-
-        // Test if popup works
-        const newTab = window.open(whatsappUrl, "_blank");
-
-        if (!newTab) {
-            console.error("Popup was blocked by the browser.");
-            alert("Popup blocked. Please allow popups for this site.");
-        } else {
-            console.log("Popup opened successfully.");
-        }
+        // Open WhatsApp
+        window.open(whatsappUrl, "_blank", "noopener,noreferrer");
     };
 
     return (
