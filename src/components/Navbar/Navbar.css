@@ -134,26 +134,45 @@
             Mobile Navbar
 ========================================== */
 
+/* ==========================================
+            Mobile Navbar
+========================================== */
+
+/* ==========================================
+            Mobile Navbar
+========================================== */
+
 @media (max-width:768px){
 
     /* Hide Desktop */
 
-   nav.desktop-navbar{
+    .desktop-navbar{
 
-        display:none !important;
+        display:none;
 
     }
 
-    nav.mobile-navbar{
+    .mobile-navbar{
 
-        display:block !important;
+        display:block;
 
         width:100%;
 
-        background:#fff;
+        background:#FFF;
 
-        border-bottom:1px solid #ececec;
+        border-bottom:1px solid #ECECEC;
+
+        position:sticky;
+
+        top:0;
+
+        z-index:999;
+
     }
+
+    /* ==========================================
+                Top Navbar
+    ========================================== */
 
     .mobile-navbar-container{
 
@@ -171,8 +190,6 @@
 
     }
 
-    /* ================= Hamburger ================= */
-
     .mobile-menu-btn{
 
         width:42px;
@@ -181,7 +198,7 @@
 
         border:none;
 
-        background:transparent;
+        background:none;
 
         display:flex;
 
@@ -189,21 +206,23 @@
 
         justify-content:center;
 
+        color:#3D251E;
+
         cursor:pointer;
 
-        color:#4A2C2A;
+        transition:.3s;
 
-        padding:0;
+        border-radius:50%;
 
     }
 
     .mobile-menu-btn:hover{
 
-        color:#8B4513;
+        background:#FFF5EA;
+
+        color:#B67C45;
 
     }
-
-    /* ================= Logo ================= */
 
     .mobile-logo-link{
 
@@ -213,39 +232,35 @@
 
         transform:translateX(-50%);
 
-        display:flex;
-
-        align-items:center;
-
-        justify-content:center;
-
     }
 
     .mobile-logo{
 
-        height:70px;
+        height:68px;
 
         width:auto;
 
-        cursor:pointer;
-
     }
-
-    /* ================= Cart ================= */
 
     .mobile-cart{
 
         position:relative;
 
-        cursor:pointer;
-
-        color:#4A2C2A;
-
         display:flex;
 
         align-items:center;
 
         justify-content:center;
+
+        color:#3D251E;
+
+        cursor:pointer;
+
+    }
+
+    .mobile-cart:hover{
+
+        color:#B67C45;
 
     }
 
@@ -257,8 +272,8 @@
 
     }
 
-        /* ==========================================
-                Mobile Overlay
+    /* ==========================================
+                Overlay
     ========================================== */
 
     .mobile-overlay{
@@ -275,7 +290,7 @@
 
         visibility:hidden;
 
-        transition:.3s ease;
+        transition:.35s;
 
         z-index:9998;
 
@@ -290,7 +305,7 @@
     }
 
     /* ==========================================
-                Mobile Drawer
+                Drawer
     ========================================== */
 
     .mobile-drawer{
@@ -303,21 +318,23 @@
 
         top:0;
 
-        left:-280px;
+        left:-320px;
 
-        width:280px;
+        width:300px;
+
+        max-width:82%;
 
         height:100vh;
 
         background:#FFF;
 
-        box-shadow:5px 0 25px rgba(0,0,0,.15);
+        transition:.35s;
 
-        transition:left .35s ease;
+        box-shadow:8px 0 35px rgba(0,0,0,.18);
 
         z-index:9999;
 
-        padding:20px 0;
+        overflow-y:auto;
 
     }
 
@@ -328,22 +345,46 @@
     }
 
     /* ==========================================
-                Close Button
+                Header
     ========================================== */
+
+    .mobile-drawer-header{
+
+        position:relative;
+
+        text-align:center;
+
+        padding:24px 22px;
+
+    }
 
     .close-drawer{
 
-        align-self:flex-end;
+        position:absolute;
 
-        margin:0 18px 20px;
+        right:16px;
+
+        top:16px;
+
+        width:38px;
+
+        height:38px;
 
         border:none;
 
-        background:transparent;
+        border-radius:50%;
+
+        background:#FFF6ED;
+
+        color:#3D251E;
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:center;
 
         cursor:pointer;
-
-        color:#4A2C2A;
 
         transition:.3s;
 
@@ -351,79 +392,29 @@
 
     .close-drawer:hover{
 
-        color:#8B4513;
+        background:#B67C45;
+
+        color:#FFF;
 
         transform:rotate(90deg);
 
     }
 
-    /* ==========================================
-                Navigation Links
-    ========================================== */
+    .drawer-logo{
 
-    .mobile-nav-link{
+        width:78px;
 
-        padding:16px 24px;
+        margin:0 auto 16px;
 
-        text-decoration:none;
-
-        color:#4A2C2A;
-
-        font-size:16px;
-
-        font-weight:500;
-
-        border-bottom:1px solid #F3F3F3;
-
-        transition:.3s;
+        display:block;
 
     }
 
-    .mobile-nav-link:hover{
-
-        background:#FFF8F0;
-
-        color:#8B4513;
-
-    }
-
-    .mobile-nav-link.active{
-
-        color:#8B4513;
-
-        font-weight:600;
-
-        background:#FFF8F0;
-
-    }
-
-        /* ==========================================
-                Divider
-    ========================================== */
-
-    .mobile-divider{
-
-        width:85%;
-
-        height:1px;
-
-        background:#ECECEC;
-
-        margin:20px auto;
-
-    }
-
-    /* ==========================================
-                Drawer Footer
-    ========================================== */
-
-    .mobile-menu-title{
-
-        padding:0 24px;
+    .drawer-title{
 
         margin:0;
 
-        font-size:18px;
+        font-size:22px;
 
         font-weight:700;
 
@@ -431,9 +422,205 @@
 
     }
 
-    .mobile-menu-subtitle{
+    .drawer-subtitle{
 
-        padding:8px 24px 0;
+        margin-top:8px;
+
+        color:#A26B35;
+
+        font-size:13px;
+
+        line-height:1.7;
+
+    }
+
+    .mobile-divider{
+
+        width:88%;
+
+        height:1px;
+
+        margin:0 auto;
+
+        background:#ECE2D6;
+
+    }
+        /* ==========================================
+                Navigation
+    ========================================== */
+
+    .mobile-nav-link{
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:space-between;
+
+        padding:18px 22px;
+
+        text-decoration:none;
+
+        color:#3D251E;
+
+        font-size:16px;
+
+        font-weight:500;
+
+        border-bottom:1px solid #F4ECE4;
+
+        transition:.3s ease;
+
+    }
+
+    .mobile-nav-link:last-of-type{
+
+        border-bottom:none;
+
+    }
+
+    .mobile-nav-left{
+
+        display:flex;
+
+        align-items:center;
+
+        gap:14px;
+
+    }
+
+    .mobile-nav-left svg{
+
+        width:18px;
+
+        height:18px;
+
+        color:#8B4513;
+
+        transition:.3s ease;
+
+        flex-shrink:0;
+
+    }
+
+    .mobile-nav-link span{
+
+        color:#3D251E;
+
+        transition:.3s ease;
+
+    }
+
+    .mobile-nav-link>svg{
+
+        width:18px;
+
+        height:18px;
+
+        color:#B67C45;
+
+        transition:.3s ease;
+
+    }
+
+    /* ==========================================
+                Hover
+    ========================================== */
+
+    .mobile-nav-link:hover{
+
+        background:#FFF8F0;
+
+        color:#8B4513;
+
+        padding-left:28px;
+
+    }
+
+    .mobile-nav-link:hover .mobile-nav-left svg{
+
+        transform:scale(1.12);
+
+    }
+
+    .mobile-nav-link:hover>svg{
+
+        transform:translateX(4px);
+
+    }
+
+    /* ==========================================
+                Active
+    ========================================== */
+
+    .mobile-nav-link.active{
+
+        background:#FFF8F0;
+
+        color:#8B4513;
+
+        font-weight:600;
+
+        border-left:4px solid #B67C45;
+
+        padding-left:18px;
+
+    }
+
+    .mobile-nav-link.active .mobile-nav-left svg{
+
+        color:#B67C45;
+
+    }
+
+    .mobile-nav-link.active>svg{
+
+        color:#B67C45;
+
+    }
+
+    /* ==========================================
+                Spacer
+    ========================================== */
+
+    .drawer-spacer{
+
+        flex:1;
+
+        min-height:30px;
+
+    }
+        /* ==========================================
+                Drawer Footer
+    ========================================== */
+
+    .drawer-footer{
+
+        text-align:center;
+
+        padding:24px 20px 30px;
+
+    }
+
+    .drawer-year{
+
+        margin:0;
+
+        font-size:14px;
+
+        font-weight:700;
+
+        color:#8B4513;
+
+        letter-spacing:1px;
+
+        text-transform:uppercase;
+
+    }
+
+    .drawer-bottom-text{
+
+        margin-top:8px;
 
         font-size:13px;
 
@@ -444,36 +631,24 @@
     }
 
     /* ==========================================
-                Touch Friendly
+                Scrollbar
     ========================================== */
-
-    .mobile-menu-btn,
-    .mobile-cart,
-    .close-drawer{
-
-        -webkit-tap-highlight-color:transparent;
-
-    }
-
-    /* ==========================================
-                Smooth Drawer
-    ========================================== */
-
-    .mobile-drawer{
-
-        overflow-y:auto;
-
-    }
 
     .mobile-drawer::-webkit-scrollbar{
 
-        width:4px;
+        width:5px;
+
+    }
+
+    .mobile-drawer::-webkit-scrollbar-track{
+
+        background:#F8F8F8;
 
     }
 
     .mobile-drawer::-webkit-scrollbar-thumb{
 
-        background:#D8D8D8;
+        background:#D8C3AF;
 
         border-radius:20px;
 
@@ -482,6 +657,55 @@
     .mobile-drawer::-webkit-scrollbar-thumb:hover{
 
         background:#B67C45;
+
+    }
+
+    /* Firefox */
+
+    .mobile-drawer{
+
+        scrollbar-width:thin;
+
+        scrollbar-color:#D8C3AF #F8F8F8;
+
+    }
+
+    /* ==========================================
+                Touch Friendly
+    ========================================== */
+
+    .mobile-menu-btn,
+    .mobile-cart,
+    .close-drawer,
+    .mobile-nav-link{
+
+        -webkit-tap-highlight-color:transparent;
+
+        user-select:none;
+
+    }
+
+    .mobile-menu-btn:focus,
+    .mobile-cart:focus,
+    .close-drawer:focus,
+    .mobile-nav-link:focus{
+
+        outline:none;
+
+    }
+
+    /* ==========================================
+                Smooth Animation
+    ========================================== */
+
+    .mobile-menu-btn,
+    .mobile-cart,
+    .close-drawer,
+    .mobile-nav-link,
+    .mobile-nav-left svg,
+    .mobile-nav-link > svg{
+
+        transition:all .3s ease;
 
     }
 
