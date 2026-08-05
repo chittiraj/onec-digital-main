@@ -30,21 +30,28 @@ function Cart({ isCartOpen, setIsCartOpen }) {
 
     } = useCart();
 
-const handleWhatsApp = () => {
+    const handleWhatsApp = () => {
 
-    const phoneNumber = "917993669326";
+        const phoneNumber = "917993669326"; // 91 + your mobile number
 
-    const message = generateWhatsAppMessage(cartItems);
+        const message = generateWhatsAppMessage(cartItems);
 
-    console.log("Cart Items:", cartItems);
-    console.log("Message:", message);
+        const whatsappUrl =
+            `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
-    window.open(
-        `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`,
-        "_blank"
-    );
+        console.log("Cart Items:", cartItems);
+        console.log("Message:", message);
+        console.log("WhatsApp URL:", whatsappUrl);
 
-};
+        // Opens WhatsApp in a new tab
+        const newWindow = window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+
+        // Fallback if popup is blocked
+        if (!newWindow) {
+            window.location.href = whatsappUrl;
+        }
+
+    };
 
     return (
 
