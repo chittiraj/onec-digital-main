@@ -18,7 +18,7 @@ function MainLayout() {
 
         <>
 
-            {/* ================= Header ================= */}
+            
 
             <header className="header">
 
@@ -29,8 +29,7 @@ function MainLayout() {
                 />
 
             </header>
-
-            {/* ================= Main Content ================= */}
+            
 
             <main className="main-content">
 
@@ -42,18 +41,18 @@ function MainLayout() {
 
             </main>
 
-            {/* ================= Footer ================= */}
+            
 
             <Footer />
 
-            {/* ================= Cart ================= */}
+            
 
             <Cart
                 isCartOpen={isCartOpen}
                 setIsCartOpen={setIsCartOpen}
             />
 
-            {/* ================= Shopping Assistant ================= */}
+            
 
             {!isCartOpen && <ShoppingAssistant />}
 

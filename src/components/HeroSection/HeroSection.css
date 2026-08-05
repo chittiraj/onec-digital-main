@@ -262,188 +262,188 @@
         Large Laptop
 =========================== */
 
-@media (max-width:1200px){
-
-    .hero-title{
-
-        font-size:52px;
-
-    }
-
-    .hero-description{
-
-        font-size:16px;
-
-    }
-
-    .hero-container{
-
-        gap:45px;
-
-    }
-
-}
-
 /* ===========================
-        Tablet
-=========================== */
-
-@media (max-width:992px){
-
-    .hero-container{
-
-        flex-direction:column;
-
-        text-align:center;
-
-        gap:50px;
-
-    }
-
-    .hero-content{
-
-        display:flex;
-
-        flex-direction:column;
-
-        align-items:center;
-
-    }
-
-    .hero-description{
-
-        max-width:650px;
-
-    }
-
-    .hero-image{
-
-        width:100%;
-
-    }
-
-    .hero-img{
-
-        max-width:520px;
-
-    }
-
-}
-
-/* ===========================
-        Mobile
+        Mobile Hero
 =========================== */
 
 @media (max-width:768px){
 
     .hero-section{
 
-        padding:50px 0 60px;
+        padding:0;
+
+        overflow:hidden;
 
     }
 
     .hero-container{
 
-        padding:0 18px;
+        position:relative;
+
+        display:block;
+
+        max-width:100%;
+
+        padding:0;
+
+        min-height:520px;
+
+        overflow:hidden;
 
     }
 
-    .hero-title{
+    /* Background Image */
 
-        font-size:42px;
+    .hero-image{
 
-        line-height:1.2;
+        position:absolute;
 
-    }
-
-    .hero-description{
-
-        font-size:15px;
-
-        line-height:1.8;
-
-    }
-
-    .hero-buttons{
-
-        flex-direction:column;
+        inset:0;
 
         width:100%;
 
-        gap:15px;
+        height:100%;
 
-    }
-
-    .primary-btn,
-
-    .secondary-btn{
-
-        width:100%;
+        z-index:1;
 
     }
 
     .hero-img{
 
-        max-width:100%;
+        width:100%;
 
-        border-radius:18px;
+        height:100%;
 
-    }
+        object-fit:cover;
 
-}
+        object-position:center top;   /* image sticks to top */
 
-/* ===========================
-        Small Mobile
-=========================== */
+        border-radius:0;
 
-@media (max-width:480px){
-
-    .hero-section{
-
-        padding:40px 0 50px;
+        box-shadow:none;
 
     }
 
-    .hero-title{
+    /* Dark Overlay */
 
-        font-size:34px;
+    .hero-image::after{
+
+        content:"";
+
+        position:absolute;
+
+        inset:0;
+
+        background:rgba(0,0,0,.50);
+
+    }
+
+    /* Text */
+
+    .hero-content{
+
+        position:relative;
+
+        z-index:2;
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        justify-content:center;
+
+        text-align:left;
+
+        padding:20px 24px 50px;
+
+        height:520px;
+
+        color:#fff;
 
     }
 
     .hero-badge{
 
-        font-size:12px;
+        background:#F5C34D;
 
-        padding:7px 16px;
+        color:#5A2D00;
+
+        font-size:13px;
+
+        font-weight:700;
+
+        padding:8px 16px;
+
+        margin-bottom:18px;
+
+    }
+
+    .hero-title{
+
+        color:#fff;
+
+        font-size:42px;
+
+        line-height:1.1;
+
+        margin:0 0 18px;
 
     }
 
     .hero-description{
 
-        font-size:14px;
+        color:rgba(255,255,255,.92);
+
+        font-size:15px;
+
+        line-height:1.8;
+
+        max-width:280px;
+
+        margin:0 0 28px;
 
     }
 
-    .primary-btn,
+    .hero-buttons{
 
+        display:block;
+
+    width:auto;
+
+    margin-top:24px;
+
+    }
+
+    .primary-btn{
+ display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:auto;
+
+    min-width:140px;
+
+    height:46px;
+
+    padding:0 24px;
+
+    border-radius:8px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    }
     .secondary-btn{
 
-        height:46px;
-
-        font-size:14px;
-
-    }
+    display:none;
 
 }
 
-/* ===========================
-        Text Selection
-=========================== */
 
-.hero-section *::selection{
-
-    background:#B67C45;
-
-    color:#FFF;
 
 }
