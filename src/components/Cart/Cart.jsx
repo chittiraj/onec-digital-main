@@ -30,18 +30,21 @@ function Cart({ isCartOpen, setIsCartOpen }) {
 
     } = useCart();
 
-    const handleWhatsApp = () => {
+const handleWhatsApp = () => {
 
-        const phoneNumber = "917993669326";
+    const phoneNumber = "917993669326";
 
-        const message = generateWhatsAppMessage(cartItems);
+    const message = generateWhatsAppMessage(cartItems);
 
-        window.open(
-            `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`,
-            "_blank"
-        );
+    console.log("Cart Items:", cartItems);
+    console.log("Message:", message);
 
-    };
+    window.open(
+        `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`,
+        "_blank"
+    );
+
+};
 
     return (
 
