@@ -49,64 +49,38 @@ function CheckoutForm() {
         /* ================= Validation ================= */
 
         if (!customer.fullName.trim()) {
-
             alert("Please enter your Full Name.");
-
             return;
-
         }
 
         if (!customer.phone.trim()) {
-
             alert("Please enter your Phone Number.");
-
             return;
-
         }
 
         if (!customer.address.trim()) {
-
             alert("Please enter your Address.");
-
             return;
-
         }
 
         if (!customer.city.trim()) {
-
             alert("Please enter your City.");
-
             return;
-
         }
 
         if (!customer.pincode.trim()) {
-
             alert("Please enter your Pincode.");
-
             return;
-
         }
 
         if (cartItems.length === 0) {
-
             alert("Your cart is empty.");
-
             return;
-
         }
 
         /* ================= Generate WhatsApp Message ================= */
 
-        const newWindow = window.open("", "_blank");
-
-        if (!newWindow) {
-
-            alert("Popup blocked. Please allow popups for this site.");
-
-            return;
-
-        }
+        /* ================= Generate WhatsApp Message ================= */
 
         const message = generateWhatsAppMessage(
             customer,
@@ -117,11 +91,19 @@ function CheckoutForm() {
 
         const phoneNumber = "917993669326";
 
-        const whatsappUrl =
-            `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
-        newWindow.location.href = whatsappUrl;
+        console.log("WhatsApp URL:", whatsappUrl);
 
+        // Test if popup works
+        const newTab = window.open(whatsappUrl, "_blank");
+
+        if (!newTab) {
+            console.error("Popup was blocked by the browser.");
+            alert("Popup blocked. Please allow popups for this site.");
+        } else {
+            console.log("Popup opened successfully.");
+        }
     };
 
     return (
