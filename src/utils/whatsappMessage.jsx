@@ -1,13 +1,20 @@
-export function generateWhatsAppMessage(cartItems) {
+export function generateWhatsAppMessage(
+
+    customer,
+
+    cartItems,
+
+    totalItems,
+
+    totalPrice
+
+) {
 
     if (!cartItems || cartItems.length === 0) {
 
         return "Hello Kumaar Putarekulu, I would like to know more about your products.";
 
     }
-
-    let totalItems = 0;
-    let totalPrice = 0;
 
     let message = `🍬 *New Order Request*\n\n`;
 
@@ -18,9 +25,6 @@ export function generateWhatsAppMessage(cartItems) {
     cartItems.forEach((item, index) => {
 
         const subTotal = item.price * item.quantity;
-
-        totalItems += item.quantity;
-        totalPrice += subTotal;
 
         message += `━━━━━━━━━━━━━━━━━━\n`;
 
@@ -44,17 +48,19 @@ export function generateWhatsAppMessage(cartItems) {
 
     message += `👤 *Customer Details*\n\n`;
 
-    message += `Name : \n`;
+    message += `👤 Name : ${customer.fullName}\n`;
 
-    message += `Phone : \n`;
+    message += `📞 Phone : ${customer.phone}\n`;
 
-    message += `Address : \n`;
+    message += `🏠 Address : ${customer.address}\n`;
 
-    message += `Preferred Delivery Date : \n`;
+    message += `🏙️ City : ${customer.city}\n`;
 
-    message += `Additional Notes : \n\n`;
+    message += `📮 Pincode : ${customer.pincode}\n\n`;
 
-    message += `Please confirm the availability.\n\n`;
+    message += `━━━━━━━━━━━━━━━━━━\n\n`;
+
+    message += `Please confirm the availability and delivery date.\n\n`;
 
     message += `Thank you 😊`;
 

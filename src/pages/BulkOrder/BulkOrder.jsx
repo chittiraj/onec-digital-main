@@ -15,13 +15,13 @@ function BulkOrder() {
 
     return (
 
-        <section className="contact-page">
+        <section className="bulk-page">
 
-            <div className="contact-card">
+            <div className="bulk-container">
 
                 {/* ================= Header ================= */}
 
-                <div className="contact-header">
+                <div className="bulk-header">
 
                     <h2>Bulk Orders</h2>
 
@@ -38,22 +38,22 @@ function BulkOrder() {
 
                 <div className="bulk-services">
 
-                    <div className="service-card">
+                    <div className="bulk-service-card">
                         <Gift size={32}/>
                         <h3>Wedding</h3>
                     </div>
 
-                    <div className="service-card">
+                    <div className="bulk-service-card">
                         <Building2 size={32}/>
                         <h3>Corporate</h3>
                     </div>
 
-                    <div className="service-card">
+                    <div className="bulk-service-card">
                         <PartyPopper size={32}/>
                         <h3>Birthday</h3>
                     </div>
 
-                    <div className="service-card">
+                    <div className="bulk-service-card">
                         <Sparkles size={32}/>
                         <h3>Festival</h3>
                     </div>
@@ -104,7 +104,7 @@ function BulkOrder() {
 
                     </div>
 
-                    <div className="bulk-card form-card">
+                    <div className="bulk-card bulk-form-card">
 
                         <h2>Place Bulk Order</h2>
 
@@ -132,7 +132,7 @@ function BulkOrder() {
 
                         <h2>Need Immediate Assistance?</h2>
 
-                        <div className="contact-row">
+                        <div className="bulk-contact-row">
 
                             <Phone size={20}/>
 
@@ -142,7 +142,7 @@ function BulkOrder() {
 
                         </div>
 
-                        <div className="contact-row">
+                        <div className="bulk-contact-row">
 
                             <Mail size={20}/>
 
@@ -154,7 +154,7 @@ function BulkOrder() {
 
                     </div>
 
-                    <div className="bulk-card map-card">
+                    <div className="bulk-card bulk-map-card">
 
                         <MapPin size={36}/>
 

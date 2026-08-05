@@ -9,6 +9,7 @@ import QA from "./pages/QA/QA";
 import Contact from "./pages/Contact/Contact";
 import About from "./pages/About/About";
 import BulkOrder from "./pages/BulkOrder/BulkOrder";
+import Checkout from "./pages/Checkout/Checkout";
 
 import "./App.css";
 
@@ -20,42 +21,49 @@ function App() {
 
             <Route element={<MainLayout />}>
 
-                {/* Home */}
+                {/* ================= Home ================= */}
 
                 <Route
                     path="/"
                     element={<HeroSection />}
                 />
 
-                {/* Products */}
+                {/* ================= Products ================= */}
 
                 <Route
                     path="/products"
                     element={<Products />}
                 />
 
-                {/* Contact */}
+                {/* ================= Contact ================= */}
 
                 <Route
                     path="/contact"
                     element={<Contact />}
                 />
 
-                {/* Bulk Order */}
+                {/* ================= Bulk Order ================= */}
 
                 <Route
                     path="/bulk-order"
                     element={<BulkOrder />}
                 />
 
-                {/* About */}
+                {/* ================= Checkout ================= */}
+
+                <Route
+                    path="/checkout"
+                    element={<Checkout />}
+                />
+
+                {/* ================= About ================= */}
 
                 <Route
                     path="/about"
                     element={<About />}
                 />
 
-                {/* Q&A */}
+                {/* ================= Q&A ================= */}
 
                 <Route
                     path="/qa"
