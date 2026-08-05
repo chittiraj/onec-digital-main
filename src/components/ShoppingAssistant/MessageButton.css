@@ -1,0 +1,55 @@
+.message-button{
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+     padding:11px 14px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#FFF8F0;
+
+    color:#3D251E;
+
+    min-height:48px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    text-decoration:none;
+
+    transition:all .3s ease;
+
+}
+
+.message-button:hover{
+
+    background:#8B4513;
+
+    color:#ffffff;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 20px rgba(139,69,19,.18);
+
+}
+
+.message-button-icon{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}

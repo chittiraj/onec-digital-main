@@ -1,0 +1,52 @@
+.announcement-bar {
+    background-color: #FEEAC9;
+    color: black;
+    font-size: small;
+    display: flex;
+    align-items: center;
+    height: 30px;
+    
+}
+
+.ticker-section {
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.ticker-section marquee {
+    color: #4A2C2A;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.highlight {
+    color: #8B4513;
+    font-weight: 600;
+}
+
+.email-section {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 18px;
+    white-space: nowrap;
+}
+
+.contact-section {
+    display: flex;
+    align-items: center;
+    padding: 0 18px;
+    white-space: nowrap;
+    border-left: 1px solid #555;
+    text-decoration:none;
+    color: black;
+}
+
+.contact-section:hover{
+
+
+    color:#B67C45;
+
+
+}

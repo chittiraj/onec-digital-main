@@ -1,0 +1,100 @@
+.navbar {
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #ececec;
+    
+}
+
+/* Container */
+.navbar-container {
+    max-width: 1320px;      /* Change to 1200px if you want */
+    width: 100%;
+    height: 80px;
+
+    margin: 0 auto;
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-sizing: border-box;
+}
+
+/* Left */
+.navbar-left {
+    flex: 1;
+}
+
+.logo {
+    height: 90px;
+    cursor: pointer;
+}
+
+/* Center */
+.navbar-center {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #4A2C2A;
+    font-size: 16px;
+    font-weight: 500;
+    transition: .3s;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #8B4513;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #8B4513;
+    transition: .3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Right */
+.navbar-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cart {
+    position: relative;
+    cursor: pointer;
+    color: #4A2C2A;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+
+    width: 18px;
+    height: 18px;
+
+    border-radius: 50%;
+    background: #8B4513;
+    color: #fff;
+
+    font-size: 11px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,479 @@
+import "./Products.css";
+import { useState } from "react";
+
+/* Images */
+
+import sweet1 from "../../assets/images/sweetsPhotos/Bellam_Pootharekulu_1.webp";
+import sweet2 from "../../assets/images/sweetsPhotos/Bellam_Pootharekulu_1.webp";
+import sweet3 from "../../assets/images/sweetsPhotos/Bellam_Pootharekulu_1.webp";
+import sweet4 from "../../assets/images/sweetsPhotos/Bellam_Pootharekulu_1.webp";
+import sweet5 from "../../assets/images/sweetsPhotos/Bellam_Pootharekulu_1.webp";
+import useCart from "../../hooks/useCart";
+
+function Products() {
+
+    const [selectedCategory, setSelectedCategory] = useState("all");
+    const { addToCart } = useCart();
+
+    const products = [
+
+        /* ===============================
+                PUTAREKULU
+        =============================== */
+
+        {
+            id: 1,
+            category: "putarekulu",
+            badge: "BESTSELLER",
+            image: sweet1,
+            name: "Plain Bellam Putarekulu",
+            price: 120,
+            weights: ["Box (10 pcs)"]
+        },
+
+        {
+            id: 2,
+            category: "putarekulu",
+            badge: "POPULAR",
+            image: sweet1,
+            name: "Plain Sugar Putarekulu",
+            price: 120,
+            weights: ["Box"]
+        },
+
+        {
+            id: 3,
+            category: "putarekulu",
+            badge: "BESTSELLER",
+            image: sweet1,
+            name: "Bellam Badam & Kaju Putarekulu",
+            price: 140,
+            weights: ["Box"]
+        },
+
+        {
+            id: 4,
+            category: "putarekulu",
+            badge: "POPULAR",
+            image: sweet1,
+            name: "Sugar Kaju Putarekulu",
+            price: 140,
+            weights: ["Box"]
+        },
+
+        {
+            id: 5,
+            category: "putarekulu",
+            badge: "PREMIUM",
+            image: sweet1,
+            name: "Bellam Dry Fruits Putarekulu",
+            price: 180,
+            weights: ["Box"]
+        },
+
+        {
+            id: 6,
+            category: "putarekulu",
+            badge: "PREMIUM",
+            image: sweet1,
+            name: "Sugar Dry Fruits Putarekulu",
+            price: 180,
+            weights: ["Box"]
+        },
+
+        {
+            id: 7,
+            category: "putarekulu",
+            badge: "SPECIAL",
+            image: sweet1,
+            name: "Special Bellam Dry Fruits Putarekulu",
+            price: 250,
+            weights: ["Box"]
+        },
+
+        {
+            id: 8,
+            category: "putarekulu",
+            badge: "SPECIAL",
+            image: sweet1,
+            name: "Special Sugar Dry Fruits Putarekulu",
+            price: 250,
+            weights: ["Box"]
+        },
+                {
+            id: 9,
+            category: "putarekulu",
+            badge: "BESTSELLER",
+            image: sweet1,
+            name: "Half Leaf Bellam Dry Fruits Putarekulu",
+            price: 350,
+            weights: ["Box"]
+        },
+
+        {
+            id: 10,
+            category: "putarekulu",
+            badge: "BESTSELLER",
+            image: sweet1,
+            name: "Half Leaf Sugar Dry Fruits Putarekulu",
+            price: 350,
+            weights: ["Box"]
+        },
+
+        {
+            id: 11,
+            category: "putarekulu",
+            badge: "PREMIUM",
+            image: sweet1,
+            name: "Full Leaf Bellam Dry Fruits Putarekulu",
+            price: 500,
+            weights: ["Box"]
+        },
+
+        {
+            id: 12,
+            category: "putarekulu",
+            badge: "PREMIUM",
+            image: sweet1,
+            name: "Full Leaf Sugar Dry Fruits Putarekulu",
+            price: 500,
+            weights: ["Box"]
+        },
+
+        {
+            id: 13,
+            category: "putarekulu",
+            badge: "NEW",
+            image: sweet1,
+            name: "Kova Dry Fruits Putarekulu",
+            price: 400,
+            weights: ["Box"]
+        },
+
+        {
+            id: 14,
+            category: "putarekulu",
+            badge: "NEW",
+            image: sweet1,
+            name: "Horlicks Dry Fruits Putarekulu",
+            price: 300,
+            weights: ["Box"]
+        },
+
+        {
+            id: 15,
+            category: "putarekulu",
+            badge: "NEW",
+            image: sweet1,
+            name: "Boost Dry Fruits Putarekulu",
+            price: 300,
+            weights: ["Box"]
+        },
+
+        {
+            id: 16,
+            category: "putarekulu",
+            badge: "HEALTHY",
+            image: sweet1,
+            name: "Sugar Free Dry Fruits Putarekulu",
+            price: 350,
+            weights: ["Box"]
+        },
+
+        {
+            id: 17,
+            category: "putarekulu",
+            badge: "SPICY",
+            image: sweet1,
+            name: "Karapodi Dry Fruits Putarekulu",
+            price: 250,
+            weights: ["Box"]
+        },
+
+        {
+            id: 18,
+            category: "putarekulu",
+            badge: "KIDS",
+            image: sweet1,
+            name: "Chocolate Dry Fruits Putarekulu",
+            price: 400,
+            weights: ["Box"]
+        },
+
+        {
+            id: 19,
+            category: "putarekulu",
+            badge: "KIDS",
+            image: sweet1,
+            name: "Oreo Dry Fruits Putarekulu",
+            price: 400,
+            weights: ["Box"]
+        },
+
+        {
+            id: 20,
+            category: "putarekulu",
+            badge: "POPULAR",
+            image: sweet1,
+            name: "Honey Dry Fruits Putarekulu",
+            price: 300,
+            weights: ["Box"]
+        },
+
+        {
+            id: 21,
+            category: "putarekulu",
+            badge: "PREMIUM",
+            image: sweet1,
+            name: "Dates Dry Fruits Putarekulu",
+            price: 400,
+            weights: ["Box (10 pcs)"]
+        },
+
+        /* ===============================
+                THANDRA
+        =============================== */
+
+        {
+            id: 22,
+            category: "thandra",
+            badge: "POPULAR",
+            image: sweet2,
+            name: "Bellam Mamidi Thandra",
+            price: 350,
+            weights: ["1 Kg", "500 g"]
+        },
+
+        {
+            id: 23,
+            category: "thandra",
+            badge: "POPULAR",
+            image: sweet2,
+            name: "Sugar Mamidi Thandra",
+            price: 300,
+            weights: ["1 Kg", "500 g"]
+        },
+
+        {
+            id: 24,
+            category: "thandra",
+            badge: "BESTSELLER",
+            image: sweet2,
+            name: "Thati Thandra",
+            price: 400,
+            weights: ["1 Kg", "500 g"]
+        },
+
+        {
+            id: 25,
+            category: "thandra",
+            badge: "NEW",
+            image: sweet2,
+            name: "Thati Thandra Roll",
+            price: 100,
+            weights: ["Roll"]
+        },
+        /* ===============================
+                GARAJEELU
+        =============================== */
+
+        {
+            id: 26,
+            category: "garajeelu",
+            badge: "TRADITIONAL",
+            image: sweet3,
+            name: "Nagaram Garajeelu",
+            price: 100,
+            weights: ["Box (5 pcs)"]
+        },
+
+        /* ===============================
+                UNDALU
+        =============================== */
+
+        {
+            id: 27,
+            category: "undalu",
+            badge: "HOMEMADE",
+            image: sweet4,
+            name: "Moramorala Undalu",
+            price: 100,
+            weights: ["Box (12 pcs)"]
+        }
+
+    ];
+
+    /* ===============================
+            Categories
+    =============================== */
+
+    const categories = [
+        { id: "all", name: "All", image: sweet1 },
+        { id: "putarekulu", name: "Putarekulu", image: sweet1 },
+        { id: "thandra", name: "Thandra", image: sweet2 },
+        { id: "garajeelu", name: "Garajeelu", image: sweet3 },
+        { id: "undalu", name: "Undalu", image: sweet4 },
+        { id: "custom", name: "Custom Orders", image: sweet5 }
+    ];
+
+    const filteredProducts =
+        selectedCategory === "all"
+            ? products
+            : products.filter(
+                  (item) => item.category === selectedCategory
+              );
+
+    return (
+        <section className="products">
+
+            {/* Heading */}
+
+            <div className="products-heading">
+
+                <span className="section-tag">
+                    OUR COLLECTION
+                </span>
+
+                <h2>
+                    Authentic Andhra Traditional Sweets
+                </h2>
+
+                {/* <p>
+                    Freshly prepared with premium ingredients from
+                    Atreyapuram. Discover our signature Putarekulu,
+                    traditional sweets and customized gift packs.
+                </p> */}
+
+            </div>
+
+            {/* Categories */}
+
+            <div className="category-wrapper">
+
+                {categories.map((item) => (
+
+                    <div
+                        key={item.id}
+                        className={`category-card ${
+                            selectedCategory === item.id ? "active" : ""
+                        }`}
+                        onClick={() => setSelectedCategory(item.id)}
+                    >
+
+                        <div className="category-image">
+                            <img
+                                src={item.image}
+                                alt={item.name}
+                            />
+                        </div>
+
+                        <h4>{item.name}</h4>
+
+                    </div>
+
+                ))}
+
+            </div>
+
+            {/* Custom Orders */}
+
+            {selectedCategory === "custom" ? (
+
+                <div className="custom-order-card">
+
+                    <img
+                        src={sweet5}
+                        alt="Custom Orders"
+                    />
+
+                    <h2>Bulk & Custom Orders</h2>
+
+                    <p>
+                        We prepare customized sweets for weddings,
+                        house warming ceremonies, festivals,
+                        return gifts, corporate gifting and
+                        bulk orders across India.
+                    </p>
+
+                    <button className="cart-btn">
+                        Contact Us
+                    </button>
+
+                </div>
+
+            ) : (
+
+                <div className="products-grid">
+
+                    {filteredProducts.map((product) => (
+
+                        <div
+                            className="product-card"
+                            key={product.id}
+                        >
+
+                            <div className="product-image">
+
+                                <img
+                                    src={product.image}
+                                    alt={product.name}
+                                />
+
+                                <span className="product-badge">
+                                    {product.badge}
+                                </span>
+
+                            </div>
+
+                            <div className="product-content">
+
+                                <h3 className="product-title">
+                                    {product.name}
+                                </h3>
+
+                                <div className="price">
+                                    ₹ {product.price}
+                                </div>
+
+                                <div className="weight-buttons">
+
+                                    {product.weights.map((weight) => (
+
+                                        <button key={weight}>
+                                            {weight}
+                                        </button>
+
+                                    ))}
+
+                                </div>
+
+                               <button
+    className="cart-btn"
+    onClick={() => {
+
+        console.log(product);
+
+        addToCart(product);
+
+    }}
+>
+    Add to Cart
+</button>
+
+                            
+
+                            </div>
+
+                        </div>
+
+                    ))}
+
+                </div>
+
+            )}
+
+        </section>
+    );
+}
+
+export default Products;

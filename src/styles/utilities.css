@@ -1,0 +1,16 @@
+/* .no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.glass {
+  backdrop-filter: blur(12px);
+}
+
+.text-balance {
+  text-wrap: balance;
+} */

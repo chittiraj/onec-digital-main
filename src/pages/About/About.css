@@ -1,0 +1,47 @@
+/* ==========================================
+                About Image
+========================================== */
+
+.about-image-section{
+
+    margin-top:35px;
+
+    border:1px solid #ECECEC;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    background:#FFF;
+
+}
+
+.about-image{
+
+    width:100%;
+
+    height:520px;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.4s ease;
+
+}
+
+
+
+/* ==========================================
+                Responsive
+========================================== */
+
+@media (max-width:768px){
+
+    .about-image{
+
+        height:260px;
+
+    }
+
+}

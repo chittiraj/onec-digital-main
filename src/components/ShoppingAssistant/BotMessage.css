@@ -1,0 +1,105 @@
+.bot-message-wrapper{
+
+    display:flex;
+
+    align-items:flex-end;
+
+    gap:10px;
+
+    margin-bottom:18px;
+
+}
+
+.bot-avatar{
+
+  width:34px;
+
+    height:34px;
+
+    font-size:16px;
+
+    border-radius:50%;
+
+    background:#8B4513;
+
+    color:#ffffff;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-shrink:0;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+
+}
+
+.bot-message{
+
+    max-width:82%;
+
+    background:#ffffff;
+
+    padding:14px 18px;
+
+    border-radius:18px 18px 18px 4px;
+
+    box-shadow:0 6px 18px rgba(0,0,0,.08);
+
+    color:#3D251E;
+
+    font-size:15px;
+
+    line-height:1.7;
+
+    position:relative;
+
+    animation:botFade .35s ease;
+
+}
+
+.message-time{
+
+    display:block;
+
+    margin-top:10px;
+
+    text-align:right;
+
+    font-size:11px;
+
+    color:#888;
+
+}
+
+@keyframes botFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .bot-message{
+
+        max-width:90%;
+
+    }
+
+}

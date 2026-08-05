@@ -1,0 +1,46 @@
+@theme {
+  --font-heading: "Libre Baskerville", serif;
+  --font-body: "Poppins", sans-serif;
+
+  --color-primary: #8B1E3F;
+  --color-secondary: #D4AF37;
+
+  /* ==========================
+     Background Colors
+  ========================== */
+
+  --color-background: #FFF8E7;
+  --color-surface: #FFFFFF;
+
+  /* ==========================
+     Text Colors
+  ========================== */
+
+  --color-text: #3E2723;
+  --color-text-light: #6B7280;
+
+  /* ==========================
+     Status Colors
+  ========================== */
+
+  --color-success: #22C55E;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+
+  /* ==========================
+     Border Radius
+  ========================== */
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* ==========================
+     Shadows
+  ========================== */
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+}

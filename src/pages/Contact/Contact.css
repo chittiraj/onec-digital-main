@@ -1,0 +1,391 @@
+/* ==========================================
+                Contact Page
+========================================== */
+
+.contact-page{
+
+    max-width:1280px;
+
+    margin:auto;
+
+    padding:45px 25px 70px;
+
+}
+
+
+/* ==========================================
+            Main Container
+========================================== */
+
+.contact-card{
+
+    width:100%;
+
+    background:#FFF;
+
+    border:1px solid #ECECEC;
+
+    border-radius:18px;
+
+    padding:32px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.05);
+
+}
+
+
+/* ==========================================
+                Header
+========================================== */
+
+.contact-header{
+
+    margin-bottom:26px;
+
+}
+
+.contact-header h2{
+
+    font-size:34px;
+
+    font-weight:700;
+
+    color:#2D201A;
+
+    margin-bottom:10px;
+
+}
+
+.contact-header p{
+
+    color:#666;
+
+    font-size:16px;
+
+    line-height:1.7;
+
+}
+
+
+/* ==========================================
+                Three Column Layout
+========================================== */
+
+.contact-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:22px;
+
+    align-items:stretch;
+
+}
+
+
+/* ==========================================
+                Common Cards
+========================================== */
+
+.info-card,
+.map-card{
+
+    background:#FFF;
+
+    border:1px solid #ECECEC;
+
+    border-radius:16px;
+
+    padding:22px;
+
+    min-height:220px;
+
+    transition:.3s ease;
+
+}
+
+.info-card:hover,
+.map-card:hover{
+
+    border-color:#B67C45;
+
+    box-shadow:0 10px 24px rgba(182,124,69,.12);
+
+}
+
+.info-card h3{
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:#2D201A;
+
+    margin-bottom:18px;
+
+}
+
+/* ==========================================
+                Contact Details
+========================================== */
+
+.contact-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:14px 16px;
+
+    margin-bottom:14px;
+
+    border:1px solid #ECECEC;
+
+    border-radius:12px;
+
+    background:#FFF;
+
+    transition:.3s ease;
+
+}
+
+.contact-item:last-child{
+
+    margin-bottom:0;
+
+}
+
+.contact-item:hover{
+
+    border-color:#B67C45;
+
+    background:#FFFCF8;
+
+    box-shadow:0 8px 18px rgba(182,124,69,.10);
+
+}
+
+.contact-item svg{
+
+    width:20px;
+
+    height:20px;
+
+    color:#B67C45;
+
+    flex-shrink:0;
+
+}
+
+.contact-item span{
+
+    color:#555;
+
+    font-size:15px;
+
+    line-height:1.7;
+
+}
+
+
+/* ==========================================
+                Google Map
+========================================== */
+
+.map-card{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:220px;
+
+    background:#FAFAFA;
+
+    color:#777;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    overflow:hidden;
+
+}
+
+.map-card iframe{
+
+    width:100%;
+
+    height:100%;
+
+    border:0;
+
+    border-radius:12px;
+
+}
+/* ==========================================
+            Factory Image
+========================================== */
+
+.contact-image-section{
+
+    margin-top:30px;
+
+    border:1px solid #ECECEC;
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+    background:#FFF;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+
+}
+
+.contact-image{
+
+    width:100%;
+
+    height:800px;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.4s ease;
+
+}
+
+
+/* Mobile */
+
+@media (max-width:768px){
+
+    .contact-image{
+
+        height:220px;
+
+    }
+
+}
+
+/* ==========================================
+                Responsive
+========================================== */
+
+@media (max-width:992px){
+
+    .contact-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .contact-card{
+
+        padding:26px;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .contact-page{
+
+        padding:35px 16px 60px;
+
+    }
+
+    .contact-card{
+
+        padding:22px;
+
+    }
+
+    .contact-header h2{
+
+        font-size:30px;
+
+    }
+
+    .contact-header p{
+
+        font-size:15px;
+
+    }
+
+    .info-card,
+    .map-card{
+
+        min-height:auto;
+
+        padding:18px;
+
+    }
+
+    .info-card h3{
+
+        font-size:20px;
+
+    }
+
+    .contact-item{
+
+        padding:12px 14px;
+
+    }
+
+    .map-card{
+
+        min-height:200px;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .contact-page{
+
+        padding:30px 15px 50px;
+
+    }
+
+    .contact-card{
+
+        padding:18px;
+
+    }
+
+}
+
+
+/* ==========================================
+            Selection
+========================================== */
+
+.contact-page *::selection{
+
+    background:#B67C45;
+
+    color:#FFF;
+
+}
+
+
+/* ==========================================
+            Smooth Animation
+========================================== */
+
+.contact-page *{
+
+    transition:.3s ease;
+
+}
