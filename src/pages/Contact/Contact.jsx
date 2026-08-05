@@ -5,6 +5,7 @@ import {
     MapPin
 } from "lucide-react";
 
+import shopPhoto from "../../assets/images/shop-photos/shop-photo.jpeg";
 function Contact() {
 
     return (
@@ -91,7 +92,7 @@ function Contact() {
                 <div className="contact-image-section">
 
                     <img
-                        src="src/assets/images/shop-photos/shop-photo.jpeg"
+                        src={shopPhoto}
                         alt="Kumaar Putarekulu Factory"
                         className="contact-image"
                     />
