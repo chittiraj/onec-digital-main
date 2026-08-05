@@ -283,3 +283,224 @@
     font-weight:700;
 
 }
+
+
+/* ===================================
+        Tablet
+=================================== */
+
+/* ===================================
+        Mobile Footer
+=================================== */
+
+/* ===================================
+        Mobile Footer
+=================================== */
+
+/* ===================================
+        Mobile Footer
+=================================== */
+
+/* ===================================
+        Footer - Mobile
+=================================== */
+
+@media (max-width:768px){
+
+    .footer{
+
+        padding:45px 0 20px;
+
+        margin-top:-20px;
+
+        border-radius:35px 35px 0 0;
+
+    }
+
+    .footer::before{
+
+        width:92%;
+
+        left:4%;
+
+    }
+
+    .footer-container{
+
+        display:flex;
+
+        flex-direction:column;
+
+        gap:32px;
+
+        padding:0 22px;
+
+    }
+
+    /* ================= About ================= */
+
+    .footer-about{
+
+        border-right:none;
+
+        border-bottom:1px solid #E6D5C5;
+
+        padding:0 0 28px;
+
+        text-align:center;
+
+    }
+
+    .footer-logo{
+
+        width:90px;
+
+        margin:0 auto 12px;
+
+        display:block;
+
+    }
+
+    .footer-about h3{
+
+        font-size:28px;
+
+        margin-bottom:6px;
+
+    }
+
+    .footer-tagline{
+
+        font-size:15px;
+
+        margin-bottom:16px;
+
+    }
+
+    .footer-about p{
+
+        font-size:15px;
+
+        line-height:1.8;
+
+        margin-bottom:18px;
+
+    }
+
+    .social-icons{
+
+        justify-content:center;
+
+        gap:22px;
+
+        font-size:24px;
+
+    }
+
+    /* ================= Contact ================= */
+
+    .footer-contact{
+
+        border-right:none;
+
+        padding:0;
+
+        text-align:left;
+
+    }
+
+    .footer-contact h3{
+
+        font-size:24px;
+
+        margin-bottom:18px;
+
+    }
+
+    .footer-contact ul{
+
+        margin:0;
+
+        padding:0;
+
+    }
+
+    .footer-contact li{
+
+        display:flex;
+
+        align-items:flex-start;
+
+        gap:12px;
+
+        margin-bottom:16px;
+
+        font-size:15px;
+
+        line-height:1.6;
+
+    }
+
+    /* ================= Promise ================= */
+
+    .footer-trust{
+
+        padding:28px 0 0;
+
+        border-top:1px solid #E6D5C5;
+
+        text-align:left;
+
+    }
+
+    .footer-trust h3{
+
+        font-size:24px;
+
+        margin-bottom:18px;
+
+    }
+
+    .footer-trust ul{
+
+        margin:0;
+
+        padding:0;
+
+    }
+
+    .footer-trust li{
+
+        margin-bottom:14px;
+
+        font-size:15px;
+
+        line-height:1.6;
+
+    }
+
+    /* ================= Bottom ================= */
+
+    .footer-bottom{
+
+        margin-top:32px;
+
+        padding:18px 20px 0;
+
+    }
+
+    .footer-bottom p{
+
+        font-size:13px;
+
+        line-height:1.7;
+
+    }
+
+    .developer-credit{
+
+        margin-top:8px;
+
+    }
+
+}

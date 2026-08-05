@@ -530,39 +530,101 @@
                 Responsive
 ========================================== */
 
-@media(max-width:768px){
+/* ==========================================
+            Mobile (Phones)
+========================================== */
+
+@media (max-width:576px){
+
+    /* Full Screen Cart */
 
     .cart-sidebar{
 
         width:100%;
 
+        max-width:100%;
+
+        right:-100%;
+
+        border-radius:0;
+
     }
+
+    .cart-sidebar.open{
+
+        right:0;
+
+    }
+
+    /* Header */
 
     .cart-header{
-
-        padding:18px;
-
-    }
-
-    .cart-body{
 
         padding:16px;
 
     }
 
+    .cart-header h2{
+
+        font-size:22px;
+
+    }
+
+    /* Empty Cart */
+
+    .empty-cart{
+
+        padding:24px;
+
+    }
+
+    .empty-cart h3{
+
+        font-size:24px;
+
+    }
+
+    .empty-cart p{
+
+        font-size:15px;
+
+    }
+
+    .shop-now-btn{
+
+        width:100%;
+
+        max-width:240px;
+
+        padding:14px;
+
+    }
+
+    /* Cart Body */
+
+    .cart-body{
+
+        padding:14px;
+
+    }
+
+    /* Cart Item */
+
     .cart-item{
+
+        gap:10px;
 
         padding:12px;
 
-        gap:12px;
+        border-radius:12px;
 
     }
 
     .cart-item img{
 
-        width:70px;
+        width:75px;
 
-        height:70px;
+        height:75px;
 
     }
 
@@ -570,13 +632,55 @@
 
         font-size:15px;
 
+        line-height:1.4;
+
     }
 
-    .cart-info p{
+    .cart-price{
+
+        font-size:14px;
+
+    }
+
+    .cart-subtotal{
+
+        font-size:14px;
+
+    }
+
+    /* Quantity */
+
+    .qty-box{
+
+        gap:10px;
+
+        margin-top:10px;
+
+    }
+
+    .qty-box button{
+
+        width:32px;
+
+        height:32px;
+
+    }
+
+    .qty-box span{
 
         font-size:15px;
 
     }
+
+    /* Delete */
+
+    .delete-btn{
+
+        padding:2px;
+
+    }
+
+    /* Footer */
 
     .cart-footer{
 
@@ -584,15 +688,24 @@
 
     }
 
-}
+    .cart-total{
 
+        font-size:15px;
 
-/* ==========================================
-            Body Lock
-========================================== */
+    }
 
-body.cart-open{
+    .cart-total strong{
 
-    overflow:hidden;
+        font-size:17px;
+
+    }
+
+    .whatsapp-btn{
+
+        padding:14px;
+
+        font-size:15px;
+
+    }
 
 }

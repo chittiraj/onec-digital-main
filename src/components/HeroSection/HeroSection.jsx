@@ -19,7 +19,7 @@ function HeroSection() {
 
                 <div className="hero-container">
 
-                    {/* Left Section */}
+                    {/* ================= Left Content ================= */}
 
                     <div className="hero-content">
 
@@ -59,20 +59,20 @@ function HeroSection() {
 
                             </button>
 
-                            {/* <button
+                            {/*
+                            <button
                                 className="secondary-btn"
                                 onClick={scrollToCollection}
                             >
-
                                 Explore Collection
-
-                            </button> */}
+                            </button>
+                            */}
 
                         </div>
 
                     </div>
 
-                    {/* Right Section */}
+                    {/* ================= Hero Image ================= */}
 
                     <div className="hero-image">
 
@@ -88,11 +88,11 @@ function HeroSection() {
 
             </section>
 
+            
             <CollectionsSection />
-
             <FounderSection />
-
             <SweetJourneySection />
+           
 
         </>
 

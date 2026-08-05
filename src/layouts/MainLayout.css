@@ -10,3 +10,9 @@
 .main-content {
     padding-top: 110px; /* Adjust based on your header height */
 }
+
+@media (max-width:768px){
+    .main-content{
+        padding-top: 100px;
+    }
+}

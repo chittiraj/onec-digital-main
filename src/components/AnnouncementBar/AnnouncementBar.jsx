@@ -11,94 +11,92 @@ function AnnouncementBar() {
 
         <div className="announcement-bar">
 
-            {/* Left - Marquee */}
+            {/* ================= Announcement ================= */}
 
             <div className="ticker-section">
 
                 <marquee
                     ref={marqueeRef}
-                    onMouseEnter={() => marqueeRef.current.stop()}
-                    onMouseLeave={() => marqueeRef.current.start()}
+                    behavior="scroll"
+                    direction="left"
+                    scrollAmount="3"
+                    onMouseEnter={() => marqueeRef.current?.stop()}
+                    onMouseLeave={() => marqueeRef.current?.start()}
                 >
 
-                    Delivering
+                    🚚 Delivering
+
                     <span className="highlight">
                         {" "}PAN India
                     </span>
 
-                    &nbsp;&nbsp;&nbsp;&nbsp; &amp; &nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;|&nbsp;&nbsp;
 
                     <span className="highlight">
                         Free Shipping
                     </span>
 
-                    on Orders above
+                    {" "}on Orders above
 
                     <span className="highlight">
                         {" "}₹799
                     </span>
 
-                    &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;|&nbsp;&nbsp;
 
-                    Estimated Standard Delivery :
+                    Estimated Delivery
 
                     <span className="highlight">
                         {" "}3–5 Working Days
                     </span>
 
-                    (Delivery time may vary based on PIN Code)
-
-                    &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;|&nbsp;&nbsp;
 
                     <span className="highlight">
                         No Food Color
                     </span>
 
-                    •
+                    &nbsp;•&nbsp;
 
                     <span className="highlight">
-                        {" "}100% Pure
+                        100% Pure
                     </span>
 
-                    •
+                    &nbsp;•&nbsp;
 
                     <span className="highlight">
-                        {" "}Traditional Recipe
+                        Traditional Recipe
                     </span>
 
-                    •
+                    &nbsp;•&nbsp;
 
                     <span className="highlight">
-                        {" "}No Palm Oil
+                        No Palm Oil
                     </span>
 
                 </marquee>
 
             </div>
 
-            {/* Email */}
+            {/* ================= Email ================= */}
 
             <div className="email-section">
 
                 <Mail size={16} />
 
                 <span>
-
                     kumarneethiputharekuki@gmail.com
-
                 </span>
 
             </div>
 
-            {/* Contact */}
+            {/* ================= Contact ================= */}
 
             <Link
                 to="/contact"
                 className="contact-section"
             >
-
                 Contact Us
-
             </Link>
 
         </div>

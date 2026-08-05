@@ -50,3 +50,85 @@
 
 
 }
+
+/* ==========================================
+        Mobile Only
+========================================== */
+
+@media (max-width:768px){
+
+    /* Hide Email */
+
+    .email-section{
+
+        display:none;
+
+    }
+
+    /* Give space for Contact */
+
+    .ticker-section{
+
+        width:calc(100% - 90px);
+
+        flex:none;
+
+        overflow:hidden;
+
+    }
+
+    .ticker-section marquee{
+
+        font-size:11px;
+
+    }
+
+    /* Contact */
+
+    .contact-section{
+
+        width:80px;
+
+        flex-shrink:0;
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:flex-end;
+
+        padding:0;
+
+        border-left:none;
+
+        font-size:12px;
+
+        font-weight:600;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .ticker-section{
+
+        width:calc(100% - 72px);
+
+    }
+
+    .ticker-section marquee{
+
+        font-size:10px;
+
+    }
+
+    .contact-section{
+
+        width:70px;
+
+        font-size:11px;
+
+    }
+
+}
