@@ -39,10 +39,6 @@ function Cart({ isCartOpen, setIsCartOpen }) {
         const whatsappUrl =
             `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
-        console.log("Cart Items:", cartItems);
-        console.log("Message:", message);
-        console.log("WhatsApp URL:", whatsappUrl);
-
         // Opens WhatsApp in a new tab
         const newWindow = window.open(whatsappUrl, "_blank", "noopener,noreferrer");
 

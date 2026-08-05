@@ -11,6 +11,9 @@ import { CartProvider } from "./context/CartContext";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/index.css";
 
+if ("scrollRestoration" in window.history) {
+    window.history.scrollRestoration = "manual";
+}
 createRoot(document.getElementById("root")).render(
 
     <StrictMode>

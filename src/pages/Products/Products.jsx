@@ -1,19 +1,43 @@
 import "./Products.css";
 import { useState } from "react";
+import { useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 
 /* Images */
-
-import sweet1 from "../../assets/images/sweetsPhotos/Bellam_Pootharekulu_1.webp";
+import sweet1 from "../../assets/images/sweetsPhotos/pootharekulu/WhatsApp Image 2026-08-03 at 2.03.33 PM-3.jpeg";
 import sweet2 from "../../assets/images/sweetsPhotos/Bellam_Pootharekulu_1.webp";
 import sweet3 from "../../assets/images/sweetsPhotos/Bellam_Pootharekulu_1.webp";
 import sweet4 from "../../assets/images/sweetsPhotos/Bellam_Pootharekulu_1.webp";
 import sweet5 from "../../assets/images/sweetsPhotos/Bellam_Pootharekulu_1.webp";
+import horlicks from "../../assets/images/sweetsPhotos/pootharekulu/horlicks-pootharekulu.jpeg";
+import boost from "../../assets/images/sweetsPhotos/pootharekulu/boost-pootharekulu.jpeg";
+import sugarMamidiThandra from "../../assets/images/sweetsPhotos/thandra/Sugar-Mamidi-Thandra.jpeg";
+import thatiThandraRoll from "../../assets/images/sweetsPhotos/thandra/Thati-Thandra-Roll.jpeg";
+import thatiThandra from "../../assets/images/sweetsPhotos/thandra/Thati-Thandra.jpeg";
+import bellamMamidiThandra from "../../assets/images/sweetsPhotos/thandra/Bellam-Mamidi-Thandra.jpeg";
+import undalu from "../../assets/images/sweetsPhotos/undalu/undalu.jpeg";
+import garajeelu from "../../assets/images/sweetsPhotos/garajeelu/garajeelu.jpeg";
+
 import useCart from "../../hooks/useCart";
 
 function Products() {
 
-    const [selectedCategory, setSelectedCategory] = useState("all");
     const { addToCart } = useCart();
+    const [searchParams] = useSearchParams();
+
+const [selectedCategory, setSelectedCategory] = useState(
+    searchParams.get("category") || "all"
+);
+
+useEffect(() => {
+
+    setSelectedCategory(
+        searchParams.get("category") || "all"
+    );
+
+}, [searchParams]);
+    
+    
 
     const products = [
 
@@ -100,7 +124,7 @@ function Products() {
             price: 250,
             weights: ["Box"]
         },
-                {
+        {
             id: 9,
             category: "putarekulu",
             badge: "BESTSELLER",
@@ -154,7 +178,7 @@ function Products() {
             id: 14,
             category: "putarekulu",
             badge: "NEW",
-            image: sweet1,
+            image: horlicks,
             name: "Horlicks Dry Fruits Putarekulu",
             price: 300,
             weights: ["Box"]
@@ -164,7 +188,7 @@ function Products() {
             id: 15,
             category: "putarekulu",
             badge: "NEW",
-            image: sweet1,
+            image: boost,
             name: "Boost Dry Fruits Putarekulu",
             price: 300,
             weights: ["Box"]
@@ -238,7 +262,7 @@ function Products() {
             id: 22,
             category: "thandra",
             badge: "POPULAR",
-            image: sweet2,
+            image: bellamMamidiThandra,
             name: "Bellam Mamidi Thandra",
             price: 350,
             weights: ["1 Kg", "500 g"]
@@ -248,7 +272,7 @@ function Products() {
             id: 23,
             category: "thandra",
             badge: "POPULAR",
-            image: sweet2,
+            image: sugarMamidiThandra,
             name: "Sugar Mamidi Thandra",
             price: 300,
             weights: ["1 Kg", "500 g"]
@@ -258,7 +282,7 @@ function Products() {
             id: 24,
             category: "thandra",
             badge: "BESTSELLER",
-            image: sweet2,
+            image: thatiThandra,
             name: "Thati Thandra",
             price: 400,
             weights: ["1 Kg", "500 g"]
@@ -268,7 +292,7 @@ function Products() {
             id: 25,
             category: "thandra",
             badge: "NEW",
-            image: sweet2,
+            image: thatiThandraRoll,
             name: "Thati Thandra Roll",
             price: 100,
             weights: ["Roll"]
@@ -281,7 +305,7 @@ function Products() {
             id: 26,
             category: "garajeelu",
             badge: "TRADITIONAL",
-            image: sweet3,
+            image: garajeelu,
             name: "Nagaram Garajeelu",
             price: 100,
             weights: ["Box (5 pcs)"]
@@ -295,7 +319,7 @@ function Products() {
             id: 27,
             category: "undalu",
             badge: "HOMEMADE",
-            image: sweet4,
+            image: undalu,
             name: "Moramorala Undalu",
             price: 100,
             weights: ["Box (12 pcs)"]
@@ -310,9 +334,9 @@ function Products() {
     const categories = [
         { id: "all", name: "All", image: sweet1 },
         { id: "putarekulu", name: "Putarekulu", image: sweet1 },
-        { id: "thandra", name: "Thandra", image: sweet2 },
-        { id: "garajeelu", name: "Garajeelu", image: sweet3 },
-        { id: "undalu", name: "Undalu", image: sweet4 },
+        { id: "thandra", name: "Thandra", image: bellamMamidiThandra },
+        { id: "garajeelu", name: "Garajeelu", image: garajeelu },
+        { id: "undalu", name: "Undalu", image: undalu },
         { id: "custom", name: "Custom Orders", image: sweet5 }
     ];
 
@@ -320,8 +344,8 @@ function Products() {
         selectedCategory === "all"
             ? products
             : products.filter(
-                  (item) => item.category === selectedCategory
-              );
+                (item) => item.category === selectedCategory
+            );
 
     return (
         <section className="products">
@@ -354,9 +378,8 @@ function Products() {
 
                     <div
                         key={item.id}
-                        className={`category-card ${
-                            selectedCategory === item.id ? "active" : ""
-                        }`}
+                        className={`category-card ${selectedCategory === item.id ? "active" : ""
+                            }`}
                         onClick={() => setSelectedCategory(item.id)}
                     >
 
@@ -447,20 +470,20 @@ function Products() {
 
                                 </div>
 
-                               <button
-    className="cart-btn"
-    onClick={() => {
+                                <button
+                                    className="cart-btn"
+                                    onClick={() => {
 
-        console.log(product);
+                                        console.log(product);
 
-        addToCart(product);
+                                        addToCart(product);
 
-    }}
->
-    Add to Cart
-</button>
+                                    }}
+                                >
+                                    Add to Cart
+                                </button>
 
-                            
+
 
                             </div>
 

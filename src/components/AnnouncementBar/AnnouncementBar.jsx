@@ -84,7 +84,7 @@ function AnnouncementBar() {
 
                 <span>
 
-                    chittirajaachari.k@gmail.com
+                    kumarneethiputharekuki@gmail.com
 
                 </span>
 
