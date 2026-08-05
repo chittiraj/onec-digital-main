@@ -66,17 +66,17 @@ function Footer() {
 
                         <li>
                             <Phone size={18} />
-                            +91 98765 43210
+                            +91 9573128496
                         </li>
 
                         <li>
                             <Mail size={18} />
-                            kumarsweets@gmail.com
+                            kumarneethiputharekuki@gmail.com
                         </li>
 
                         <li>
-                            <MapPin size={18} />
-                            Atreyapuram, Andhra Pradesh
+                            <MapPin size={30} />
+                            Atreyapuram main road, near lolla lokkulu, Andhra Pradesh
                         </li>
 
                         <li>
@@ -124,7 +124,7 @@ function Footer() {
 
                 <p className="developer-credit">
                     Website Designed &amp; Developed by
-                    <span> Creatix Technology Private Limited</span>
+                    <span> C Labs Private Limited</span>
                 </p>
 
             </div>

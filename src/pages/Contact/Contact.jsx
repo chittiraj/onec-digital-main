@@ -45,7 +45,7 @@ function Contact() {
 
                             <Phone size={20} />
 
-                            <span>+91 98765 43210</span>
+                            <span>+91 9573128496</span>
 
                         </div>
 
@@ -63,9 +63,9 @@ function Contact() {
 
                             <span>
 
-                                Atreyapuram<br/>
+                                Atreyapuram main road, <br></br>
 
-                                East Godavari<br/>
+                                Near lolla lokkulu 
 
                                 Andhra Pradesh
 
@@ -88,15 +88,15 @@ function Contact() {
                 </div>
                 {/* ================= Factory Image ================= */}
 
-<div className="contact-image-section">
+                <div className="contact-image-section">
 
-    <img
-        src="src/assets/images/shop-photos/shop-photo.jpeg"
-        alt="Kumaar Putarekulu Factory"
-        className="contact-image"
-    />
+                    <img
+                        src="src/assets/images/shop-photos/shop-photo.jpeg"
+                        alt="Kumaar Putarekulu Factory"
+                        className="contact-image"
+                    />
 
-</div>
+                </div>
 
             </div>
 

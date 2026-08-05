@@ -1,16 +1,19 @@
 /* ===========================
-   Hero Section
+        Hero Section
 =========================== */
 
 .hero-section{
+
     width:100%;
+
     background:#FFF8F0;
+
     padding:40px 0 70px;
 
 }
 
 /* ===========================
-   Container
+        Container
 =========================== */
 
 .hero-container{
@@ -32,11 +35,13 @@
 }
 
 /* ===========================
-   Left
+        Left Section
 =========================== */
 
 .hero-content{
+
     flex:1;
+
 }
 
 .hero-badge{
@@ -86,75 +91,137 @@
 }
 
 /* ===========================
-   Buttons
+        Hero Buttons
 =========================== */
 
 .hero-buttons{
 
     display:flex;
 
-    gap:20px;
+    gap:18px;
 
-    margin-top:35px;
+    margin-top:38px;
+
+    flex-wrap:wrap;
 
 }
 
+/* ===========================
+      Primary Button
+=========================== */
+
 .primary-btn{
 
-    padding:14px 30px;
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-width:180px;
+
+    height:50px;
+
+    padding:0 30px;
 
     border:none;
 
-    background:#8B4513;
+    outline:none;
 
-    color:#fff;
+    border-radius:10px;
 
-    border-radius:8px;
+    background:#B67C45;
 
-    cursor:pointer;
+    color:#FFF;
 
     font-size:15px;
 
     font-weight:600;
+
+    letter-spacing:.4px;
+
+    cursor:pointer;
+
+    transition:all .3s ease;
 
 }
 
 .primary-btn:hover{
 
-    background:#A0522D;
+    background:#9E6735;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 22px rgba(182,124,69,.28);
 
 }
 
+.primary-btn:active{
+
+    transform:scale(.98);
+
+}
+
+/* ===========================
+     Secondary Button
+=========================== */
+
 .secondary-btn{
 
-    padding:14px 30px;
+    display:inline-flex;
 
-    background:#fff;
+    align-items:center;
 
-    color:#8B4513;
+    justify-content:center;
 
-    border:2px solid #8B4513;
+    min-width:210px;
 
-    border-radius:8px;
+    height:50px;
 
-    cursor:pointer;
+    padding:0 30px;
+
+    border:2px solid #B67C45;
+
+    outline:none;
+
+    background:#FFF;
+
+    color:#B67C45;
+
+    border-radius:10px;
 
     font-size:15px;
 
     font-weight:600;
 
+    letter-spacing:.4px;
+
+    cursor:pointer;
+
+    transition:all .3s ease;
+
 }
 
 .secondary-btn:hover{
 
-    background:#8B4513;
+    background:#B67C45;
 
-    color:#fff;
+    color:#FFF;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 22px rgba(182,124,69,.18);
+
+}
+
+.secondary-btn:active{
+
+    transform:scale(.98);
 
 }
 
 /* ===========================
-   Right Image
+        Right Image
 =========================== */
 
 .hero-image{
@@ -164,6 +231,8 @@
     display:flex;
 
     justify-content:center;
+
+    align-items:center;
 
 }
 
@@ -178,5 +247,203 @@
     object-fit:cover;
 
     box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+}
+
+.hero-img:hover{
+
+
+
+    box-shadow:0 20px 45px rgba(0,0,0,.18);
+
+}
+
+/* ===========================
+        Large Laptop
+=========================== */
+
+@media (max-width:1200px){
+
+    .hero-title{
+
+        font-size:52px;
+
+    }
+
+    .hero-description{
+
+        font-size:16px;
+
+    }
+
+    .hero-container{
+
+        gap:45px;
+
+    }
+
+}
+
+/* ===========================
+        Tablet
+=========================== */
+
+@media (max-width:992px){
+
+    .hero-container{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        gap:50px;
+
+    }
+
+    .hero-content{
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .hero-description{
+
+        max-width:650px;
+
+    }
+
+    .hero-image{
+
+        width:100%;
+
+    }
+
+    .hero-img{
+
+        max-width:520px;
+
+    }
+
+}
+
+/* ===========================
+        Mobile
+=========================== */
+
+@media (max-width:768px){
+
+    .hero-section{
+
+        padding:50px 0 60px;
+
+    }
+
+    .hero-container{
+
+        padding:0 18px;
+
+    }
+
+    .hero-title{
+
+        font-size:42px;
+
+        line-height:1.2;
+
+    }
+
+    .hero-description{
+
+        font-size:15px;
+
+        line-height:1.8;
+
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+        width:100%;
+
+        gap:15px;
+
+    }
+
+    .primary-btn,
+
+    .secondary-btn{
+
+        width:100%;
+
+    }
+
+    .hero-img{
+
+        max-width:100%;
+
+        border-radius:18px;
+
+    }
+
+}
+
+/* ===========================
+        Small Mobile
+=========================== */
+
+@media (max-width:480px){
+
+    .hero-section{
+
+        padding:40px 0 50px;
+
+    }
+
+    .hero-title{
+
+        font-size:34px;
+
+    }
+
+    .hero-badge{
+
+        font-size:12px;
+
+        padding:7px 16px;
+
+    }
+
+    .hero-description{
+
+        font-size:14px;
+
+    }
+
+    .primary-btn,
+
+    .secondary-btn{
+
+        height:46px;
+
+        font-size:14px;
+
+    }
+
+}
+
+/* ===========================
+        Text Selection
+=========================== */
+
+.hero-section *::selection{
+
+    background:#B67C45;
+
+    color:#FFF;
 
 }

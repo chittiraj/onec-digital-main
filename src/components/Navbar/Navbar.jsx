@@ -48,19 +48,12 @@ function Navbar({ setIsCartOpen }) {
                         Products
                     </NavLink>
 
-                    <NavLink
+                    {/* <NavLink
                         to="/qa"
                         className="nav-link"
                     >
                         Q&A
-                    </NavLink>
-
-                    <NavLink
-                        to="/about"
-                        className="nav-link"
-                    >
-                        About
-                    </NavLink>
+                    </NavLink> */}
 
                     <NavLink
                         to="/bulk-order"
@@ -73,8 +66,14 @@ function Navbar({ setIsCartOpen }) {
                         to="/contact"
                         className="nav-link"
                     >
-                        Contact
+                        Contact Us
                     </NavLink>
+                    {/* <NavLink
+                        to="/about"
+                        className="nav-link"
+                    >
+                        About Us
+                    </NavLink> */}
 
                 </div>
 

@@ -137,7 +137,7 @@ function BulkOrder() {
                             <Phone size={20}/>
 
                             <span>
-                                +91 98765 43210
+                                +91 9573128496
                             </span>
 
                         </div>
@@ -147,7 +147,7 @@ function BulkOrder() {
                             <Mail size={20}/>
 
                             <span>
-                                bulk@kumarputarekulu.com
+                                kumarneethiputharekuki@gmail.com
                             </span>
 
                         </div>
