@@ -46,13 +46,15 @@ function CheckoutForm() {
 
     const handleWhatsAppOrder = () => {
 
-        
+        console.log("========================================");
+        console.log("🚀 Order Button Clicked");
+        console.log("========================================");
 
         /* ================= Validation ================= */
 
         if (!customer.fullName.trim()) {
 
-            
+            console.log("❌ Full Name Missing");
 
             alert("Please enter your Full Name.");
 
@@ -62,7 +64,7 @@ function CheckoutForm() {
 
         if (!customer.phone.trim()) {
 
-            
+            console.log("❌ Phone Number Missing");
 
             alert("Please enter your Phone Number.");
 
@@ -72,7 +74,7 @@ function CheckoutForm() {
 
         if (!customer.address.trim()) {
 
-            
+            console.log("❌ Address Missing");
 
             alert("Please enter your Address.");
 
@@ -82,6 +84,7 @@ function CheckoutForm() {
 
         if (!customer.city.trim()) {
 
+            console.log("❌ City Missing");
 
             alert("Please enter your City.");
 
@@ -91,6 +94,7 @@ function CheckoutForm() {
 
         if (!customer.pincode.trim()) {
 
+            console.log("❌ Pincode Missing");
 
             alert("Please enter your Pincode.");
 
@@ -100,12 +104,27 @@ function CheckoutForm() {
 
         if (cartItems.length === 0) {
 
+            console.log("❌ Cart Empty");
 
             alert("Your cart is empty.");
 
             return;
 
         }
+
+        console.log("✅ Validation Passed");
+
+        console.log("Customer Details :", customer);
+
+        console.log("Cart Items :", cartItems);
+
+        console.log("Total Items :", totalItems);
+
+        console.log("Total Price :", totalPrice);
+
+        console.log("========================================");
+        console.log("Generating WhatsApp Message...");
+        console.log("========================================");
 
         const message = generateWhatsAppMessage(
 
@@ -119,12 +138,28 @@ function CheckoutForm() {
 
         );
 
-    
+        console.log("✅ Message Generated Successfully");
+
+        console.log(message);
+
+        console.log("Message Length :", message.length);
 
         const phoneNumber = "917993669326";
 
         const whatsappUrl =
             `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+        console.log("========================================");
+
+        console.log("WhatsApp URL");
+
+        console.log(whatsappUrl);
+
+        console.log("URL Length :", whatsappUrl.length);
+
+        console.log("========================================");
+
+        console.log("Opening WhatsApp...");
 
         const newWindow = window.open(
 
@@ -135,6 +170,20 @@ function CheckoutForm() {
             "noopener,noreferrer"
 
         );
+
+        console.log("Window Object :", newWindow);
+
+        if (!newWindow) {
+
+            console.log("❌ Popup Blocked");
+
+        } else {
+
+            console.log("✅ WhatsApp Window Opened");
+
+        }
+
+        console.log("========================================");
 
     };
 
