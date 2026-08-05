@@ -92,9 +92,8 @@ function CheckoutForm() {
         const phoneNumber = "917993669326";
 
         const whatsappUrl =
-            `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
 
-        // Open WhatsApp
         window.open(whatsappUrl, "_blank", "noopener,noreferrer");
     };
 
