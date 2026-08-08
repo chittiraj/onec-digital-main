@@ -39,6 +39,7 @@ function MobileDrawer({ isMenuOpen, closeMenu }) {
                     <button
                         className="close-drawer"
                         onClick={closeMenu}
+                        
                     >
 
                         <X size={22} />

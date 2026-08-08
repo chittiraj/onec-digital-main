@@ -1,24 +1,24 @@
 import "./MobileCartDrawer.css";
 
+import "../../styles/index.css";
 import {
-
     X,
-
     Plus,
-
     Minus,
-
     Trash2,
-
     ShoppingCart
 
 } from "lucide-react";
 
-import { Link } from "react-router-dom";
+import {
+
+    Link,
+
+    useNavigate
+
+} from "react-router-dom";
 
 import useCart from "../../hooks/useCart";
-
-import { generateWhatsAppMessage } from "../../utils/whatsappMessage";
 
 function MobileCartDrawer({
 
@@ -44,36 +44,19 @@ function MobileCartDrawer({
 
     } = useCart();
 
+    const navigate = useNavigate();
+
     const closeDrawer = () => {
 
         setIsCartOpen(false);
 
     };
 
-    const handleWhatsApp = () => {
+    const goToCheckout = () => {
 
-        const phoneNumber = "917993669326";
+        closeDrawer();
 
-        const message = generateWhatsAppMessage(cartItems);
-
-        const whatsappUrl =
-            `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-
-        const newWindow = window.open(
-
-            whatsappUrl,
-
-            "_blank",
-
-            "noopener,noreferrer"
-
-        );
-
-        if (!newWindow) {
-
-            window.location.href = whatsappUrl;
-
-        }
+        navigate("/checkout");
 
     };
 
@@ -81,7 +64,7 @@ function MobileCartDrawer({
 
         <>
 
-            {/* Overlay */}
+            {/* ================= Overlay ================= */}
 
             <div
 
@@ -91,7 +74,7 @@ function MobileCartDrawer({
 
             />
 
-            {/* Drawer */}
+            {/* ================= Drawer ================= */}
 
             <aside
 
@@ -99,7 +82,7 @@ function MobileCartDrawer({
 
             >
 
-                {/* Header */}
+                {/* ================= Header ================= */}
 
                 <div className="mobile-cart-header">
 
@@ -124,7 +107,8 @@ function MobileCartDrawer({
                 </div>
 
                 <div className="mobile-cart-divider"></div>
-                                {/* ================= Empty Cart ================= */}
+
+                {/* ================= Empty Cart ================= */}
 
                 {
 
@@ -167,171 +151,178 @@ function MobileCartDrawer({
                         )
 
                         :
+                                            (
 
-                        (
+                        <>
 
-                            <>
+                            {/* ================= Cart Body ================= */}
 
-                                {/* ================= Cart Body ================= */}
+                            <div className="mobile-cart-body">
 
-                                <div className="mobile-cart-body">
+                                {
 
-                                    {
+                                    cartItems.map((item) => (
 
-                                        cartItems.map((item) => (
+                                        <div
 
-                                            <div
+                                            className="mobile-cart-item"
 
-                                                className="mobile-cart-item"
+                                            key={item.id}
 
-                                                key={item.id}
+                                        >
 
-                                            >
+                                            {/* Product Image */}
 
-                                                <img
+                                            <img
 
-                                                    src={item.image}
+                                                src={item.image}
 
-                                                    alt={item.name}
+                                                alt={item.name}
 
-                                                />
+                                            />
 
-                                                <div className="mobile-cart-info">
+                                            {/* Product Details */}
 
-                                                    <h4>
+                                            <div className="mobile-cart-info">
 
-                                                        {item.name}
+                                                <h4>
 
-                                                    </h4>
+                                                    {item.name}
 
-                                                    <p className="mobile-cart-price">
+                                                </h4>
 
-                                                        ₹{item.price} × {item.quantity}
+                                                <p className="mobile-cart-price">
 
-                                                    </p>
+                                                    ₹{item.price} × {item.quantity}
 
-                                                    <p className="mobile-cart-subtotal">
+                                                </p>
 
-                                                        Total : ₹{item.price * item.quantity}
+                                                <p className="mobile-cart-subtotal">
 
-                                                    </p>
+                                                    Total : ₹{item.price * item.quantity}
 
-                                                    <div className="mobile-qty-box">
+                                                </p>
 
-                                                        <button
+                                                {/* ================= Quantity ================= */}
 
-                                                            onClick={() =>
+                                                <div className="mobile-qty-box">
 
-                                                                decreaseQuantity(item.id)
+                                                    <button
 
-                                                            }
+                                                        onClick={() =>
 
-                                                        >
+                                                            decreaseQuantity(item.id)
 
-                                                            <Minus size={16} />
+                                                        }
 
-                                                        </button>
+                                                    >
 
-                                                        <span>
+                                                        <Minus size={16} />
 
-                                                            {item.quantity}
+                                                    </button>
 
-                                                        </span>
+                                                    <span>
 
-                                                        <button
+                                                        {item.quantity}
 
-                                                            onClick={() =>
+                                                    </span>
 
-                                                                increaseQuantity(item.id)
+                                                    <button
 
-                                                            }
+                                                        onClick={() =>
 
-                                                        >
+                                                            increaseQuantity(item.id)
 
-                                                            <Plus size={16} />
+                                                        }
 
-                                                        </button>
+                                                    >
 
-                                                    </div>
+                                                        <Plus size={16} />
+
+                                                    </button>
 
                                                 </div>
 
-                                                <button
-
-                                                    className="mobile-delete-btn"
-
-                                                    onClick={() =>
-
-                                                        removeFromCart(item.id)
-
-                                                    }
-
-                                                >
-
-                                                    <Trash2 size={18} />
-
-                                                </button>
-
                                             </div>
 
-                                        ))
+                                            {/* ================= Delete ================= */}
 
-                                    }
+                                            <button
 
-                                </div>
-                                                                {/* ================= Footer ================= */}
+                                                className="mobile-delete-btn"
 
-                                <div className="mobile-cart-footer">
+                                                onClick={() =>
 
-                                    <div className="mobile-cart-total">
+                                                    removeFromCart(item.id)
 
-                                        <span>
+                                                }
 
-                                            Items
+                                            >
 
-                                        </span>
+                                                <Trash2 size={18} />
 
-                                        <strong>
+                                            </button>
 
-                                            {totalItems}
+                                        </div>
 
-                                        </strong>
+                                    ))
 
-                                    </div>
+                                }
 
-                                    <div className="mobile-cart-total">
+                            </div>
+                                                        {/* ================= Footer ================= */}
 
-                                        <span>
+                            <div className="mobile-cart-footer">
 
-                                            Total
+                                <div className="mobile-cart-total">
 
-                                        </span>
+                                    <span>
 
-                                        <strong>
+                                        Items
 
-                                            ₹ {totalPrice}
+                                    </span>
 
-                                        </strong>
+                                    <strong>
 
-                                    </div>
+                                        {totalItems}
 
-                                    <button
-
-                                        className="mobile-whatsapp-btn"
-
-                                        onClick={handleWhatsApp}
-
-                                    >
-
-                                        Order on WhatsApp
-
-                                    </button>
+                                    </strong>
 
                                 </div>
 
-                            </>
+                                <div className="mobile-cart-total">
 
-                        )
+                                    <span>
+
+                                        Total
+
+                                    </span>
+
+                                    <strong>
+
+                                        ₹ {totalPrice}
+
+                                    </strong>
+
+                                </div>
+
+                                <button
+
+                                    className="mobile-whatsapp-btn"
+
+                                    onClick={goToCheckout}
+
+                                >
+
+                                    Proceed to Checkout
+
+                                </button>
+
+                            </div>
+
+                        </>
+
+                    )
 
                 }
 
