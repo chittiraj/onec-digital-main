@@ -1,0 +1,53 @@
+/* ==========================================================
+                    GLOBAL MOBILE SAFE AREA
+========================================================== */
+
+:root {
+
+    --safe-area-top: env(safe-area-inset-top, 0px);
+
+    --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+
+}
+
+/* ==========================================================
+                    Utility Classes
+========================================================== */
+
+/* Use for fixed footer/buttons */
+
+.mobile-safe-bottom {
+
+    padding-bottom: calc(16px + var(--safe-area-bottom));
+
+}
+
+/* Use for full pages */
+
+.mobile-page-safe {
+
+    padding-bottom: calc(80px + var(--safe-area-bottom));
+
+}
+
+/* Use for fixed headers if needed */
+
+.mobile-safe-top {
+
+    padding-top: calc(var(--safe-area-top));
+
+}
+
+/* ==========================================================
+                    Mobile Browsers
+========================================================== */
+
+@media (max-width: 768px) {
+
+    body {
+
+        padding-bottom: var(--safe-area-bottom);
+
+    }
+
+}

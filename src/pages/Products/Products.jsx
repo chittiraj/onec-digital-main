@@ -2,6 +2,7 @@ import "./Products.css";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
+import { Minus, Plus } from "lucide-react";
 
 /* Images */
 import sweet1 from "../../assets/images/sweetsPhotos/pootharekulu/WhatsApp Image 2026-08-03 at 2.03.33 PM-3.jpeg";
@@ -22,22 +23,32 @@ import useCart from "../../hooks/useCart";
 
 function Products() {
 
-    const { addToCart } = useCart();
+    const {
+
+        cartItems,
+
+        addToCart,
+
+        increaseQuantity,
+
+        decreaseQuantity
+
+    } = useCart();
     const [searchParams] = useSearchParams();
 
-const [selectedCategory, setSelectedCategory] = useState(
-    searchParams.get("category") || "all"
-);
-
-useEffect(() => {
-
-    setSelectedCategory(
+    const [selectedCategory, setSelectedCategory] = useState(
         searchParams.get("category") || "all"
     );
 
-}, [searchParams]);
-    
-    
+    useEffect(() => {
+
+        setSelectedCategory(
+            searchParams.get("category") || "all"
+        );
+
+    }, [searchParams]);
+
+
 
     const products = [
 
@@ -428,68 +439,98 @@ useEffect(() => {
 
                 <div className="products-grid">
 
-                    {filteredProducts.map((product) => (
+                    {filteredProducts.map((product) => {
 
-                        <div
-                            className="product-card"
-                            key={product.id}
-                        >
+                        const cartItem = cartItems.find(
+                            (item) => item.id === product.id
+                        );
 
-                            <div className="product-image">
+                        return (
 
-                                <img
-                                    src={product.image}
-                                    alt={product.name}
-                                />
+                            <div
+                                className="product-card"
+                                key={product.id}
+                            >
 
-                                <span className="product-badge">
-                                    {product.badge}
-                                </span>
+                                <div className="product-image">
 
-                            </div>
+                                    <img
+                                        src={product.image}
+                                        alt={product.name}
+                                    />
 
-                            <div className="product-content">
-
-                                <h3 className="product-title">
-                                    {product.name}
-                                </h3>
-
-                                <div className="price">
-                                    ₹ {product.price}
-                                </div>
-
-                                <div className="weight-buttons">
-
-                                    {product.weights.map((weight) => (
-
-                                        <button key={weight}>
-                                            {weight}
-                                        </button>
-
-                                    ))}
+                                    <span className="product-badge">
+                                        {product.badge}
+                                    </span>
 
                                 </div>
 
-                                <button
-                                    className="cart-btn"
-                                    onClick={() => {
+                                <div className="product-content">
 
-                                        console.log(product);
+                                    <h3 className="product-title">
+                                        {product.name}
+                                    </h3>
 
-                                        addToCart(product);
+                                    <div className="price">
+                                        ₹ {product.price}
+                                    </div>
 
-                                    }}
-                                >
-                                    Add to Cart
-                                </button>
+                                    <div className="weight-buttons">
 
+                                        {product.weights.map((weight) => (
 
+                                            <button key={weight}>
+                                                {weight}
+                                            </button>
+
+                                        ))}
+
+                                    </div>
+
+                                    {
+
+                                        cartItem ? (
+
+                                            <div className="product-qty-box">
+                                                <div className="minu-btn">
+                                                <button onClick={() => decreaseQuantity(product.id)}>
+                                                    <Minus size={18} />
+                                                </button>
+
+                                                </div>
+                                                
+
+                                                <span>{cartItem.quantity}</span>
+
+                                                <div className="minu-btn">
+                                                <button onClick={() => increaseQuantity(product.id)}>
+                                                    <Plus size={18} />
+                                                </button>
+
+                                                </div>
+
+                                            </div>
+
+                                        ) : (
+
+                                            <button
+                                                className="cart-btn"
+                                                onClick={() => addToCart(product)}
+                                            >
+                                                Add to Cart
+                                            </button>
+
+                                        )
+
+                                    }
+
+                                </div>
 
                             </div>
 
-                        </div>
+                        );
 
-                    ))}
+                    })}
 
                 </div>
 
