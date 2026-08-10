@@ -1,21 +1,38 @@
 import "./Products.css";
+
 import { useState } from "react";
 import { useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
-import { Minus, Plus } from "lucide-react";
+import {
+    useSearchParams,
+    useNavigate
+} from "react-router-dom";
 
-/* Images */
+import {
+
+    Minus,
+
+    Plus
+
+} from "lucide-react";
+
+
+
+/* ================= Images ================= */
+
 import sweet1 from "../../assets/images/sweetsPhotos/pootharekulu/WhatsApp Image 2026-08-03 at 2.03.33 PM-3.jpeg";
 import sweet2 from "../../assets/images/sweetsPhotos/Bellam_Pootharekulu_1.webp";
 import sweet3 from "../../assets/images/sweetsPhotos/Bellam_Pootharekulu_1.webp";
 import sweet4 from "../../assets/images/sweetsPhotos/Bellam_Pootharekulu_1.webp";
 import sweet5 from "../../assets/images/sweetsPhotos/Bellam_Pootharekulu_1.webp";
+
 import horlicks from "../../assets/images/sweetsPhotos/pootharekulu/horlicks-pootharekulu.jpeg";
 import boost from "../../assets/images/sweetsPhotos/pootharekulu/boost-pootharekulu.jpeg";
+
 import sugarMamidiThandra from "../../assets/images/sweetsPhotos/thandra/Sugar-Mamidi-Thandra.jpeg";
 import thatiThandraRoll from "../../assets/images/sweetsPhotos/thandra/Thati-Thandra-Roll.jpeg";
 import thatiThandra from "../../assets/images/sweetsPhotos/thandra/Thati-Thandra.jpeg";
 import bellamMamidiThandra from "../../assets/images/sweetsPhotos/thandra/Bellam-Mamidi-Thandra.jpeg";
+
 import undalu from "../../assets/images/sweetsPhotos/undalu/undalu.jpeg";
 import garajeelu from "../../assets/images/sweetsPhotos/garajeelu/garajeelu.jpeg";
 
@@ -34,19 +51,48 @@ function Products() {
         decreaseQuantity
 
     } = useCart();
+
     const [searchParams] = useSearchParams();
 
     const [selectedCategory, setSelectedCategory] = useState(
+
         searchParams.get("category") || "all"
+
     );
 
     useEffect(() => {
 
         setSelectedCategory(
+
             searchParams.get("category") || "all"
+
         );
 
     }, [searchParams]);
+
+
+
+    /* ===============================
+            Bulk Order WhatsApp
+    =============================== */
+
+    /* ===============================
+        Custom Order
+================================ */
+
+    const handleCustomOrder = () => {
+
+        navigate("/custom-order");
+
+    };
+
+    const navigate = useNavigate();
+
+
+    /* ===============================
+            Products Array
+    =============================== */
+
 
 
 
@@ -411,27 +457,74 @@ function Products() {
 
             {/* Custom Orders */}
 
+
             {selectedCategory === "custom" ? (
 
-                <div className="custom-order-card">
+                <div className="products-grid">
 
-                    <img
-                        src={sweet5}
-                        alt="Custom Orders"
-                    />
+                    <div className="product-card custom-product-card">
 
-                    <h2>Bulk & Custom Orders</h2>
+                        {/* Product Image */}
 
-                    <p>
-                        We prepare customized sweets for weddings,
-                        house warming ceremonies, festivals,
-                        return gifts, corporate gifting and
-                        bulk orders across India.
-                    </p>
+                        <div className="product-image">
 
-                    <button className="cart-btn">
-                        Contact Us
-                    </button>
+                            <img
+
+                                src={sweet5}
+
+                                alt="Bulk & Custom Orders"
+
+                            />
+
+                            <span className="product-badge">
+
+                                BULK
+
+                            </span>
+
+                        </div>
+
+                        {/* Product Content */}
+
+                        <div className="product-content">
+
+                            <h3 className="product-title">
+
+                                Bulk & Custom Orders
+
+                            </h3>
+
+                            <div className="price">
+
+                                Custom Pricing
+
+                            </div>
+
+                            <div className="weight-buttons">
+
+                                <button>
+
+                                    Any Quantity
+
+                                </button>
+
+                            </div>
+
+                            <button
+
+                                className="mobile-whatsapp-btn"
+
+                                onClick={handleCustomOrder}
+
+                            >
+
+                                Order on WhatsApp
+
+                            </button>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
@@ -442,25 +535,35 @@ function Products() {
                     {filteredProducts.map((product) => {
 
                         const cartItem = cartItems.find(
+
                             (item) => item.id === product.id
+
                         );
 
                         return (
 
                             <div
+
                                 className="product-card"
+
                                 key={product.id}
+
                             >
 
                                 <div className="product-image">
 
                                     <img
+
                                         src={product.image}
+
                                         alt={product.name}
+
                                     />
 
                                     <span className="product-badge">
+
                                         {product.badge}
+
                                     </span>
 
                                 </div>
@@ -468,11 +571,15 @@ function Products() {
                                 <div className="product-content">
 
                                     <h3 className="product-title">
+
                                         {product.name}
+
                                     </h3>
 
                                     <div className="price">
+
                                         ₹ {product.price}
+
                                     </div>
 
                                     <div className="weight-buttons">
@@ -480,7 +587,9 @@ function Products() {
                                         {product.weights.map((weight) => (
 
                                             <button key={weight}>
+
                                                 {weight}
+
                                             </button>
 
                                         ))}
@@ -492,20 +601,46 @@ function Products() {
                                         cartItem ? (
 
                                             <div className="product-qty-box">
+
                                                 <div className="minu-btn">
-                                                <button onClick={() => decreaseQuantity(product.id)}>
-                                                    <Minus size={18} />
-                                                </button>
+
+                                                    <button
+
+                                                        onClick={() =>
+
+                                                            decreaseQuantity(product.id)
+
+                                                        }
+
+                                                    >
+
+                                                        <Minus size={18} />
+
+                                                    </button>
 
                                                 </div>
-                                                
 
-                                                <span>{cartItem.quantity}</span>
+                                                <span>
+
+                                                    {cartItem.quantity}
+
+                                                </span>
 
                                                 <div className="minu-btn">
-                                                <button onClick={() => increaseQuantity(product.id)}>
-                                                    <Plus size={18} />
-                                                </button>
+
+                                                    <button
+
+                                                        onClick={() =>
+
+                                                            increaseQuantity(product.id)
+
+                                                        }
+
+                                                    >
+
+                                                        <Plus size={18} />
+
+                                                    </button>
 
                                                 </div>
 
@@ -514,10 +649,19 @@ function Products() {
                                         ) : (
 
                                             <button
+
                                                 className="cart-btn"
-                                                onClick={() => addToCart(product)}
+
+                                                onClick={() =>
+
+                                                    addToCart(product)
+
+                                                }
+
                                             >
+
                                                 Add to Cart
+
                                             </button>
 
                                         )

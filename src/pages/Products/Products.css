@@ -508,20 +508,66 @@
     font-weight: 700;
 
 }
-.product-qty-box:hover{
+
+.product-qty-box:hover {
     background: #9E6735;
-        transform: translateY(-2px);
+    transform: translateY(-2px);
 }
 
-.minu-btn button{
+.minu-btn button {
     display: flex;
     align-items: center;
     justify-content: center;
     transition: .3s ease;
 }
+
 /* ==========================================
             Large Laptop
 ========================================== */
+
+/* ==========================================
+        Custom Product Card
+========================================== */
+
+.custom-product-card {
+
+    display: flex;
+
+    flex-direction: column;
+
+    height: 100%;
+
+}
+
+.custom-product-card .product-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
+
+}
+
+.custom-product-card .price {
+
+    font-size: 14px;
+
+    color: #666;
+
+}
+
+.custom-product-card .weight-buttons {
+
+    margin-bottom: 18px;
+
+}
+
+.custom-product-card .cart-btn {
+
+    margin-top: auto;
+
+}
 
 @media (max-width:1400px) {
 
@@ -932,21 +978,21 @@
     }
 
     .product-qty-box {
-    transition: .3s ease;
-}
+        transition: .3s ease;
+    }
 
-.product-qty-box:hover {
-    background: #9E6735;
-    transform: translateY(-2px);
-}
+    .product-qty-box:hover {
+        background: #9E6735;
+        transform: translateY(-2px);
+    }
 
-.product-qty-box button {
-    transition: .3s ease;
-}
+    .product-qty-box button {
+        transition: .3s ease;
+    }
 
-.product-qty-box button:hover {
-    background: rgba(255,255,255,.15);
-}
+    .product-qty-box button:hover {
+        background: rgba(255, 255, 255, .15);
+    }
 
 }
 
@@ -1031,11 +1077,11 @@
     }
 
     .product-image img {
-        
+
         /* transition: .35s ease; */
     }
 
-    
+
 
     .product-badge {
         top: 7px;
@@ -1193,9 +1239,9 @@
     .weight-buttons button:focus,
     .cart-btn:focus {
         outline: none;
-    }   
-    
-    
+    }
+
+
 
 }
 

@@ -11,7 +11,17 @@ import {
     MapPin
 } from "lucide-react";
 
+import { useNavigate } from "react-router-dom";
+
 function BulkOrder() {
+
+    const navigate = useNavigate();
+
+    const handleBulkOrder = () => {
+
+        navigate("/bulk-order-form");
+
+    };
 
     return (
 
@@ -23,7 +33,9 @@ function BulkOrder() {
 
                 <div className="bulk-header">
 
-                    <h2>Bulk Orders</h2>
+                    <h2>
+                        Bulk Orders
+                    </h2>
 
                     <p>
                         Planning a Wedding, Birthday, Corporate Event or Festival?
@@ -34,107 +46,180 @@ function BulkOrder() {
 
                 </div>
 
+
                 {/* ================= Occasion ================= */}
 
                 <div className="bulk-services">
 
                     <div className="bulk-service-card">
-                        <Gift size={32}/>
-                        <h3>Wedding</h3>
+
+                        <Gift size={32} />
+
+                        <h3>
+                            Wedding
+                        </h3>
+
                     </div>
 
-                    <div className="bulk-service-card">
-                        <Building2 size={32}/>
-                        <h3>Corporate</h3>
-                    </div>
 
                     <div className="bulk-service-card">
-                        <PartyPopper size={32}/>
-                        <h3>Birthday</h3>
+
+                        <Building2 size={32} />
+
+                        <h3>
+                            Corporate
+                        </h3>
+
                     </div>
 
+
                     <div className="bulk-service-card">
-                        <Sparkles size={32}/>
-                        <h3>Festival</h3>
+
+                        <PartyPopper size={32} />
+
+                        <h3>
+                            Birthday
+                        </h3>
+
+                    </div>
+
+
+                    <div className="bulk-service-card">
+
+                        <Sparkles size={32} />
+
+                        <h3>
+                            Festival
+                        </h3>
+
                     </div>
 
                 </div>
+
 
                 {/* ================= Row 1 ================= */}
 
                 <div className="bulk-row">
 
+                    {/* ================= Why Choose Us ================= */}
+
                     <div className="bulk-card">
 
-                        <h2>Why Choose Us?</h2>
+                        <h2>
+                            Why Choose Us?
+                        </h2>
 
                         <ul className="feature-list">
 
                             <li>
-                                <CheckCircle size={18}/>
+
+                                <CheckCircle size={18} />
+
                                 Minimum Order : 5 Kg
+
                             </li>
 
+
                             <li>
-                                <CheckCircle size={18}/>
+
+                                <CheckCircle size={18} />
+
                                 Delivery Across India
+
                             </li>
 
+
                             <li>
-                                <CheckCircle size={18}/>
+
+                                <CheckCircle size={18} />
+
                                 Freshly Prepared
+
                             </li>
 
+
                             <li>
-                                <CheckCircle size={18}/>
+
+                                <CheckCircle size={18} />
+
                                 Premium Ingredients
+
                             </li>
 
+
                             <li>
-                                <CheckCircle size={18}/>
+
+                                <CheckCircle size={18} />
+
                                 Gift Packaging Available
+
                             </li>
 
+
                             <li>
-                                <CheckCircle size={18}/>
+
+                                <CheckCircle size={18} />
+
                                 Bulk Discounts Available
+
                             </li>
 
                         </ul>
 
                     </div>
 
+
+                    {/* ================= Place Bulk Order ================= */}
+
                     <div className="bulk-card bulk-form-card">
 
-                        <h2>Place Bulk Order</h2>
+                        <h2>
+                            Place Bulk Order
+                        </h2>
 
                         <p>
-                            Fill our Google Form and we'll contact you shortly
-                            with pricing and delivery details.
+                            Need sweets in large quantities?
+                            Tell us your required quantity and
+                            our team will contact you on WhatsApp
+                            to discuss pricing and delivery.
                         </p>
 
-                        <a
-                            href="#"
+
+                        <button
+
+                            type="button"
+
                             className="bulk-btn"
+
+                            onClick={handleBulkOrder}
+
                         >
-                            Fill Google Form
-                        </a>
+
+                            Order on WhatsApp
+
+                        </button>
 
                     </div>
 
                 </div>
 
+
                 {/* ================= Row 2 ================= */}
 
                 <div className="bulk-row">
 
+                    {/* ================= Contact ================= */}
+
                     <div className="bulk-card">
 
-                        <h2>Need Immediate Assistance?</h2>
+                        <h2>
+                            Need Immediate Assistance?
+                        </h2>
+
 
                         <div className="bulk-contact-row">
 
-                            <Phone size={20}/>
+                            <Phone size={20} />
 
                             <span>
                                 +91 9573128496
@@ -142,9 +227,10 @@ function BulkOrder() {
 
                         </div>
 
+
                         <div className="bulk-contact-row">
 
-                            <Mail size={20}/>
+                            <Mail size={20} />
 
                             <span>
                                 kumarneethiputharekuki@gmail.com
@@ -154,11 +240,16 @@ function BulkOrder() {
 
                     </div>
 
+
+                    {/* ================= Map ================= */}
+
                     <div className="bulk-card bulk-map-card">
 
-                        <MapPin size={36}/>
+                        <MapPin size={36} />
 
-                        <p>Google Map</p>
+                        <p>
+                            Google Map
+                        </p>
 
                     </div>
 

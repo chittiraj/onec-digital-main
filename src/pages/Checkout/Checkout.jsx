@@ -36,11 +36,12 @@ function Checkout() {
 
                     {/* Left Side */}
 
-                    <CheckoutForm />
+                    
 
                     {/* Right Side */}
 
                     <OrderSummary />
+                    <CheckoutForm />
 
                 </div>
 

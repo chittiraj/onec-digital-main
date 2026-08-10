@@ -75,7 +75,7 @@ function Footer() {
                         </li>
 
                         <li>
-                            <MapPin size={30} />
+                            <MapPin size={10} />
                             Atreyapuram main road, near lolla lokkulu, Andhra Pradesh
                         </li>
 
