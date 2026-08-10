@@ -1,709 +1,823 @@
 /* ==========================================
-                Bulk Page
+   BULK ORDER PAGE
 ========================================== */
 
-.bulk-page{
+.bulk-page {
+    width: 100%;
 
-    max-width:1280px;
+    background: #ffffff;
 
-    margin:auto;
+    padding: 30px 20px 70px;
 
-    padding:45px 25px 70px;
-
+    box-sizing: border-box;
 }
+
 
 /* ==========================================
-            Main Container
+   MAIN CONTAINER
 ========================================== */
 
-.bulk-container{
+.bulk-container {
+    width: 100%;
 
-    width:100%;
+    max-width: 1280px;
 
-    background:#FFF;
+    margin: 0 auto;
 
-    border:1px solid #ECECEC;
+    background: #ffffff;
 
-    border-radius:18px;
+    border: 1px solid #ECECEC;
 
-    padding:32px;
+    border-radius: 18px;
 
-    box-shadow:0 10px 25px rgba(0,0,0,.05);
+    padding: 32px;
 
+    box-sizing: border-box;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
 }
+
 
 /* ==========================================
-                Header
+   HEADER
 ========================================== */
 
-.bulk-header{
-
-    margin-bottom:28px;
-
+.bulk-header {
+    margin-bottom: 28px;
 }
 
-.bulk-header h2{
+.bulk-header h2 {
+    font-size: 34px;
 
-    font-size:34px;
+    font-weight: 700;
 
-    font-weight:700;
+    color: #2D201A;
 
-    color:#2D201A;
-
-    margin-bottom:12px;
-
+    margin: 0 0 12px;
 }
 
-.bulk-header p{
+.bulk-header p {
+    color: #666;
 
-    color:#666;
+    font-size: 16px;
 
-    font-size:16px;
+    line-height: 1.8;
 
-    line-height:1.8;
-
+    margin: 0;
 }
+
 
 /* ==========================================
-                Bulk Services
+   BULK SERVICES
 ========================================== */
 
-.bulk-services{
+.bulk-services {
+    display: grid;
 
-    display:grid;
+    grid-template-columns: repeat(4, 1fr);
 
-    grid-template-columns:repeat(4,1fr);
+    gap: 20px;
 
-    gap:20px;
-
-    margin:35px 0;
-
+    margin: 35px 0;
 }
 
-.bulk-service-card{
+.bulk-service-card {
+    background: #ffffff;
 
-    background:#FFF;
+    border: 1px solid #ECECEC;
 
-    border:1px solid #ECECEC;
+    border-radius: 16px;
 
-    border-radius:16px;
+    padding: 24px 20px;
 
-    padding:24px 20px;
+    text-align: center;
 
-    text-align:center;
+    cursor: pointer;
 
-    cursor:pointer;
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 
-    transition:.3s ease;
-
+    box-sizing: border-box;
 }
 
-.bulk-service-card:hover{
+.bulk-service-card:hover {
+    border-color: #B67C45;
 
-    border-color:#B67C45;
+    transform: translateY(-4px);
 
-    transform:translateY(-4px);
-
-    box-shadow:0 10px 20px rgba(182,124,69,.12);
-
+    box-shadow: 0 10px 20px rgba(182, 124, 69, 0.12);
 }
 
-.bulk-service-card svg{
+.bulk-service-card svg {
+    color: #B67C45;
 
-    color:#B67C45;
-
-    margin-bottom:14px;
-
+    margin-bottom: 14px;
 }
 
-.bulk-service-card h3{
+.bulk-service-card h3 {
+    margin: 0;
 
-    margin:0;
+    color: #2D201A;
 
-    color:#2D201A;
+    font-size: 20px;
 
-    font-size:20px;
-
-    font-weight:600;
-
+    font-weight: 600;
 }
+
 
 /* ==========================================
-                Bulk Rows
+   BULK ROWS
 ========================================== */
 
-.bulk-row{
+.bulk-row {
+    display: grid;
 
-    display:grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
-    grid-template-columns:repeat(2,1fr);
+    gap: 24px;
 
-    gap:24px;
+    margin-top: 24px;
 
-    margin-top:24px;
-
-    align-items:start;
-
+    align-items: start;
 }
+
 
 /* ==========================================
-                Cards
+   BULK CARDS
 ========================================== */
 
-.bulk-card{
+.bulk-card {
+    width: 100%;
 
-    background:#FFF;
+    background: #ffffff;
 
-    border:1px solid #ECECEC;
+    border: 1px solid #ECECEC;
 
-    border-radius:16px;
+    border-radius: 16px;
 
-    padding:30px;
+    padding: 30px;
 
-    transition:.3s ease;
+    box-sizing: border-box;
 
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-.bulk-card:hover{
+.bulk-card:hover {
+    border-color: #B67C45;
 
-    border-color:#B67C45;
-
-    box-shadow:0 10px 24px rgba(0,0,0,.08);
-
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
 }
 
-.bulk-card h2{
+.bulk-card h2 {
+    font-size: 30px;
 
-    font-size:30px;
+    font-weight: 700;
 
-    font-weight:700;
+    color: #2D201A;
 
-    color:#2D201A;
-
-    margin-bottom:24px;
-
+    margin: 0 0 24px;
 }
+
 
 /* ==========================================
-                Feature List
+   FEATURE LIST
 ========================================== */
 
-.feature-list{
+.feature-list {
+    list-style: none;
 
-    list-style:none;
+    padding: 0;
 
-    padding:0;
-
-    margin:0;
-
+    margin: 0;
 }
 
-.feature-list li{
+.feature-list li {
+    display: flex;
 
-    display:flex;
+    align-items: center;
 
-    align-items:center;
+    gap: 14px;
 
-    gap:14px;
+    padding: 14px 0;
 
-    padding:14px 0;
+    font-size: 16px;
 
-    font-size:16px;
+    color: #555;
 
-    color:#555;
-
-    border-bottom:1px solid #F2F2F2;
-
+    border-bottom: 1px solid #F2F2F2;
 }
 
-.feature-list li:last-child{
-
-    border-bottom:none;
-
+.feature-list li:last-child {
+    border-bottom: none;
 }
 
-.feature-list svg{
+.feature-list svg {
+    color: #34A853;
 
-    color:#34A853;
-
-    flex-shrink:0;
-
+    flex-shrink: 0;
 }
+
 
 /* ==========================================
-            Google Form Card
+   BULK FORM CARD
 ========================================== */
 
-.bulk-form-card{
+.bulk-form-card {
+    display: flex;
 
-    display:flex;
+    flex-direction: column;
 
-    flex-direction:column;
+    justify-content: center;
 
-    justify-content:center;
+    align-items: center;
 
-    align-items:center;
-
-    text-align:center;
-
+    text-align: center;
 }
 
-.bulk-form-card p{
+.bulk-form-card p {
+    color: #666;
 
-    color:#666;
+    font-size: 16px;
 
-    font-size:16px;
+    line-height: 1.8;
 
-    line-height:1.8;
+    max-width: 380px;
 
-    max-width:380px;
-
-    margin-bottom:28px;
-
+    margin: 0 0 28px;
 }
 
-.bulk-btn{
-
-    display:inline-flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    padding:14px 36px;
-
-    background:#B67C45;
-
-    color:#FFF;
-
-    border-radius:40px;
-
-    text-decoration:none;
-
-    font-size:15px;
-
-    font-weight:600;
-
-    transition:.3s ease;
-
-}
-
-.bulk-btn:hover{
-
-    background:#9D6837;
-
-    color:#FFF;
-
-    transform:translateY(-2px);
-
-}
 
 /* ==========================================
-                Contact Card
+   BULK BUTTON
 ========================================== */
 
-.bulk-contact-row{
+.bulk-btn {
+    display: inline-flex;
 
-    display:flex;
+    justify-content: center;
 
-    align-items:center;
+    align-items: center;
 
-    gap:14px;
+    padding: 14px 36px;
 
-    padding:18px 20px;
+    background: #B67C45;
 
-    border:1px solid #ECECEC;
+    color: #ffffff;
 
-    border-radius:12px;
+    border-radius: 40px;
 
-    margin-bottom:18px;
+    text-decoration: none;
 
-    transition:.3s ease;
+    font-size: 15px;
 
+    font-weight: 600;
+
+    border: none;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
 }
 
-.bulk-contact-row:last-child{
+.bulk-btn:hover {
+    background: #9D6837;
 
-    margin-bottom:0;
+    color: #ffffff;
 
+    transform: translateY(-2px);
 }
 
-.bulk-contact-row:hover{
-
-    border-color:#B67C45;
-
-    background:#FFFCF8;
-
-}
-
-.bulk-contact-row svg{
-
-    color:#B67C45;
-
-    flex-shrink:0;
-
-}
-
-.bulk-contact-row span{
-
-    color:#444;
-
-    font-size:16px;
-
-    font-weight:500;
-
-    word-break:break-word;
-
-}
 
 /* ==========================================
-                Google Map
+   CONTACT CARD
 ========================================== */
 
-.bulk-map-card{
+.bulk-contact-row {
+    display: flex;
 
-    display:flex;
+    align-items: center;
 
-    flex-direction:column;
+    gap: 14px;
 
-    justify-content:center;
+    padding: 18px 20px;
 
-    align-items:center;
+    border: 1px solid #ECECEC;
 
-    min-height:260px;
+    border-radius: 12px;
 
-    background:#FAFAFA;
+    margin-bottom: 18px;
 
+    box-sizing: border-box;
+
+    transition:
+        border-color 0.3s ease,
+        background 0.3s ease;
 }
 
-.bulk-map-card svg{
-
-    color:#B67C45;
-
-    margin-bottom:16px;
-
+.bulk-contact-row:last-child {
+    margin-bottom: 0;
 }
 
-.bulk-map-card p{
+.bulk-contact-row:hover {
+    border-color: #B67C45;
 
-    margin:0;
-
-    color:#666;
-
-    font-size:20px;
-
-    font-weight:600;
-
-    text-align:center;
-
+    background: #FFFCF8;
 }
+
+.bulk-contact-row svg {
+    color: #B67C45;
+
+    flex-shrink: 0;
+}
+
+.bulk-contact-row span {
+    color: #444;
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+    word-break: break-word;
+}
+
 
 /* ==========================================
-                Responsive
+   GOOGLE MAP
 ========================================== */
 
-@media (max-width:992px){
+.bulk-map-card {
+    display: flex;
 
-    .bulk-services{
+    flex-direction: column;
 
-        grid-template-columns:repeat(2,1fr);
+    justify-content: center;
 
+    align-items: center;
+
+    min-height: 260px;
+
+    background: #FAFAFA;
+}
+
+.bulk-map-card svg {
+    color: #B67C45;
+
+    margin-bottom: 16px;
+}
+
+.bulk-map-card p {
+    margin: 0;
+
+    color: #666;
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    text-align: center;
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 992px) {
+
+    .bulk-services {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .bulk-row{
+    .bulk-row {
+        grid-template-columns: 1fr;
 
-        grid-template-columns:1fr;
-
-        gap:20px;
-
+        gap: 20px;
     }
 
 }
 
 /* ==========================================
-                Mobile
+   MOBILE / TABLET
 ========================================== */
 
-@media (max-width:768px){
+@media (max-width: 768px) {
 
-    .bulk-page{
+    .bulk-page {
+        width: 100%;
 
-        padding:35px 16px 60px;
+        padding: 25px 15px 50px;
 
+        box-sizing: border-box;
     }
 
-    .bulk-container{
+    .bulk-container {
+        width: 100%;
 
-        padding:22px;
+        max-width: 100%;
 
+        padding: 22px;
+
+        margin: 0 auto;
+
+        border-radius: 14px;
+
+        box-sizing: border-box;
     }
+
 
     /* ================= Header ================= */
 
-    .bulk-header{
-
-        margin-bottom:22px;
-
+    .bulk-header {
+        margin-bottom: 22px;
     }
 
-    .bulk-header h2{
+    .bulk-header h2 {
+        font-size: 28px;
 
-        font-size:28px;
+        text-align: center;
 
-        text-align:center;
-
+        margin-bottom: 10px;
     }
 
-    .bulk-header p{
+    .bulk-header p {
+        font-size: 15px;
 
-        font-size:15px;
+        line-height: 1.7;
 
-        line-height:1.7;
-
-        text-align:center;
-
+        text-align: center;
     }
+
 
     /* ================= Services ================= */
 
-    .bulk-services{
+    .bulk-services {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
 
-        grid-template-columns:repeat(2,1fr);
+        gap: 14px;
 
-        gap:14px;
-
-        margin:24px 0;
-
+        margin: 24px 0;
     }
 
-    .bulk-service-card{
+    .bulk-service-card {
+        width: 100%;
 
-        padding:16px 12px;
+        padding: 16px 12px;
 
-        border-radius:14px;
+        border-radius: 14px;
 
+        box-sizing: border-box;
     }
 
-    .bulk-service-card svg{
+    .bulk-service-card svg {
+        width: 26px;
 
-        width:26px;
+        height: 26px;
 
-        height:26px;
-
-        margin-bottom:10px;
-
+        margin-bottom: 10px;
     }
 
-    .bulk-service-card h3{
+    .bulk-service-card h3 {
+        font-size: 17px;
 
-        font-size:17px;
-
-        margin:0;
-
+        margin: 0;
     }
+
 
     /* ================= Rows ================= */
 
-    .bulk-row{
+    .bulk-row {
+        width: 100%;
 
-        grid-template-columns:1fr;
+        grid-template-columns: 1fr;
 
-        gap:18px;
+        gap: 18px;
 
-        margin-top:18px;
-
+        margin-top: 18px;
     }
 
-    .bulk-card{
 
-        padding:20px;
+    /* ================= Cards ================= */
 
+    .bulk-card {
+        width: 100%;
+
+        padding: 20px;
+
+        border-radius: 14px;
+
+        box-sizing: border-box;
     }
 
-    .bulk-card h2{
+    .bulk-card h2 {
+        font-size: 24px;
 
-        font-size:24px;
+        text-align: center;
 
-        text-align:center;
-
-        margin-bottom:18px;
-
+        margin-bottom: 18px;
     }
 
-    /* ================= Features ================= */
 
-    .feature-list li{
+    /* ================= Feature List ================= */
 
-        padding:12px 0;
+    .feature-list li {
+        padding: 12px 0;
 
-        font-size:15px;
+        font-size: 15px;
 
+        gap: 10px;
     }
 
-    /* ================= Form ================= */
 
-    .bulk-form-card{
+    /* ================= Bulk Form ================= */
 
-        justify-content:flex-start;
+    .bulk-form-card {
+        width: 100%;
 
+        justify-content: flex-start;
+
+        align-items: stretch;
+
+        box-sizing: border-box;
     }
 
-    .bulk-form-card p{
+    .bulk-form-card p {
+        width: 100%;
 
-        max-width:100%;
+        max-width: 100%;
 
-        font-size:15px;
+        font-size: 15px;
 
-        line-height:1.7;
+        line-height: 1.7;
 
-        margin-bottom:22px;
+        margin-bottom: 22px;
 
+        box-sizing: border-box;
     }
 
-    .bulk-btn{
+    .bulk-btn {
+        width: 100%;
 
-        width:100%;
-
+        box-sizing: border-box;
     }
+
 
     /* ================= Contact ================= */
 
-    .bulk-contact-row{
+    .bulk-contact-row {
+        width: 100%;
 
-        padding:15px;
+        padding: 15px;
 
-        gap:12px;
+        gap: 12px;
 
+        box-sizing: border-box;
     }
 
-    .bulk-contact-row span{
+    .bulk-contact-row span {
+        font-size: 15px;
 
-        font-size:15px;
-
+        min-width: 0;
     }
+
 
     /* ================= Map ================= */
 
-    .bulk-map-card{
+    .bulk-map-card {
+        width: 100%;
 
-        min-height:180px;
+        min-height: 180px;
 
-        padding:24px 18px;
+        padding: 24px 18px;
 
+        box-sizing: border-box;
     }
 
-    .bulk-map-card p{
-
-        font-size:18px;
-
+    .bulk-map-card p {
+        font-size: 18px;
     }
-
 }
 
+
 /* ==========================================
-            Small Mobile
+   SMALL MOBILE
 ========================================== */
 
-@media (max-width:480px){
+@media (max-width: 480px) {
 
-    .bulk-page{
+    .bulk-page {
+        width: 100%;
 
-        padding:30px 15px 50px;
+        padding: 20px 10px 45px;
 
+        box-sizing: border-box;
     }
 
-    .bulk-container{
+    .bulk-container {
+        width: 100%;
 
-        padding:18px;
+        max-width: 100%;
 
+        padding: 15px;
+
+        margin: 0 auto;
+
+        border-radius: 12px;
+
+        box-sizing: border-box;
     }
 
-    .bulk-services{
 
-        grid-template-columns:repeat(2,1fr);
+    /* ================= Header ================= */
 
-        gap:12px;
-
+    .bulk-header {
+        margin-bottom: 20px;
     }
 
-    .bulk-service-card{
+    .bulk-header h2 {
+        font-size: 24px;
 
-        padding:14px 10px;
-
+        text-align: center;
     }
 
-    .bulk-service-card svg{
+    .bulk-header p {
+        font-size: 14px;
 
-        width:24px;
+        line-height: 1.7;
 
-        height:24px;
-
+        text-align: center;
     }
 
-    .bulk-service-card h3{
 
-        font-size:16px;
+    /* ================= Services ================= */
 
+    .bulk-services {
+        width: 100%;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+
+        margin: 22px 0;
     }
 
-    .bulk-card{
+    .bulk-service-card {
+        width: 100%;
 
-        padding:18px;
+        padding: 14px 8px;
 
+        border-radius: 12px;
+
+        box-sizing: border-box;
     }
 
-    .bulk-header h2{
+    .bulk-service-card svg {
+        width: 24px;
 
-        font-size:24px;
-
+        height: 24px;
     }
 
-    .bulk-header p{
-
-        font-size:14px;
-
+    .bulk-service-card h3 {
+        font-size: 16px;
     }
 
-    .feature-list li{
 
-        font-size:14px;
+    /* ================= Rows ================= */
 
-        gap:10px;
+    .bulk-row {
+        width: 100%;
 
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+        margin-top: 15px;
     }
 
-    .bulk-contact-row{
 
-        padding:14px;
+    /* ================= Cards ================= */
 
+    .bulk-card {
+        width: 100%;
+
+        padding: 16px;
+
+        border-radius: 12px;
+
+        box-sizing: border-box;
     }
 
-    .bulk-contact-row span{
+    .bulk-card h2 {
+        font-size: 22px;
 
-        font-size:14px;
-
+        margin-bottom: 16px;
     }
 
+
+    /* ================= Features ================= */
+
+    .feature-list li {
+        font-size: 14px;
+
+        gap: 9px;
+
+        padding: 11px 0;
+    }
+
+    .feature-list li svg {
+        width: 17px;
+
+        height: 17px;
+    }
+
+
+    /* ================= Bulk Form ================= */
+
+    .bulk-form-card {
+        width: 100%;
+
+        padding: 16px;
+
+        box-sizing: border-box;
+    }
+
+    .bulk-form-card p {
+        width: 100%;
+
+        font-size: 14px;
+
+        line-height: 1.6;
+
+        margin-bottom: 18px;
+    }
+
+    .bulk-btn {
+        width: 100%;
+
+        min-height: 46px;
+
+        padding: 12px 20px;
+
+        box-sizing: border-box;
+    }
+
+
+    /* ================= Contact ================= */
+
+    .bulk-contact-row {
+        width: 100%;
+
+        padding: 13px;
+
+        gap: 10px;
+
+        box-sizing: border-box;
+    }
+
+    .bulk-contact-row svg {
+        width: 18px;
+
+        height: 18px;
+    }
+
+    .bulk-contact-row span {
+        font-size: 14px;
+
+        min-width: 0;
+
+        overflow-wrap: anywhere;
+    }
+
+
+    /* ================= Map ================= */
+
+    .bulk-map-card {
+        width: 100%;
+
+        min-height: 160px;
+
+        padding: 20px 15px;
+
+        box-sizing: border-box;
+    }
+
+    .bulk-map-card p {
+        font-size: 17px;
+    }
 }
 
-/* ==========================================
-            Selection
-========================================== */
-
-.bulk-page *::selection{
-
-    background:#B67C45;
-
-    color:#FFF;
-
-}
 
 /* ==========================================
-            Smooth Animation
+   TEXT SELECTION
 ========================================== */
 
-.bulk-page *{
+.bulk-page *::selection {
+    background: #B67C45;
 
-    transition:.3s ease;
-
+    color: #FFFFFF;
 }

@@ -1,0 +1,681 @@
+/* =========================================================
+   BULK ORDER FORM
+========================================================= */
+
+.bulk-order-form-card {
+    width: 100%;
+    max-width: 1280px;
+
+    margin: 30px auto 70px;
+
+    background: #ffffff;
+
+    border: 1px solid #e6e6e6;
+    border-radius: 16px;
+
+    padding: 32px;
+
+    box-sizing: border-box;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================================================
+   FORM HEADER
+========================================================= */
+
+.bulk-order-form-card > h3 {
+    margin: 0 0 8px;
+
+    color: #30251f;
+
+    font-size: 28px;
+    font-weight: 700;
+}
+
+
+.bulk-order-form-description {
+    margin: 0 0 28px;
+
+    color: #777777;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   FORM SECTIONS
+========================================================= */
+
+.bulk-order-sections {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    gap: 24px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   INDIVIDUAL SECTION
+========================================================= */
+
+.bulk-order-section {
+    width: 100%;
+
+    background: #ffffff;
+
+    border: 1px solid #eadfd8;
+
+    border-radius: 12px;
+
+    padding: 22px;
+
+    box-sizing: border-box;
+}
+
+
+.bulk-order-section h4 {
+    margin: 0 0 20px;
+
+    color: #4a2c20;
+
+    font-size: 19px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   FORM ROW
+========================================================= */
+
+.bulk-order-row {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    gap: 15px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.bulk-order-section .form-group {
+    width: 100%;
+
+    margin-bottom: 18px;
+
+    box-sizing: border-box;
+}
+
+
+.bulk-order-section label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #4a352b;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.bulk-order-section input,
+.bulk-order-section textarea {
+    width: 100%;
+
+    max-width: 100%;
+
+    box-sizing: border-box;
+
+    border: 1px solid #d9d9d9;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #333333;
+
+    padding: 12px 13px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.bulk-order-section input {
+    height: 44px;
+}
+
+
+.bulk-order-section textarea {
+    min-height: 100px;
+
+    resize: vertical;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   INPUT FOCUS
+========================================================= */
+
+.bulk-order-section input:focus,
+.bulk-order-section textarea:focus {
+    border-color: #b66a32;
+
+    box-shadow:
+        0 0 0 2px rgba(182, 106, 50, 0.08);
+}
+
+
+/* =========================================================
+   BULK INFORMATION BOX
+========================================================= */
+
+.bulk-order-info {
+    width: 100%;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    margin-top: 4px;
+
+    padding: 14px;
+
+    box-sizing: border-box;
+
+    background: #fffaf5;
+
+    border: 1px solid #ead8c8;
+
+    border-radius: 10px;
+}
+
+
+.bulk-order-info > span {
+    flex-shrink: 0;
+
+    font-size: 18px;
+
+    line-height: 1.4;
+}
+
+
+.bulk-order-info p {
+    margin: 0;
+
+    color: #66574f;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+.bulk-order-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #b66a32;
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   WHATSAPP ACTION
+========================================================= */
+
+.bulk-order-action {
+    width: 100%;
+
+    margin-top: 25px;
+
+    text-align: center;
+
+    box-sizing: border-box;
+}
+
+
+.bulk-order-whatsapp-btn {
+    display: block;
+
+    width: 100%;
+
+    height: 52px;
+
+    margin: 0;
+
+    padding: 0 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #20c463;
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.bulk-order-whatsapp-btn:hover {
+    background: #18ad54;
+}
+
+
+.bulk-order-whatsapp-btn:active {
+    transform: scale(0.99);
+}
+
+
+/* =========================================================
+   ACTION DESCRIPTION
+========================================================= */
+
+.bulk-order-action p {
+    margin: 12px 0 0;
+
+    color: #777777;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    text-align: center;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 992px) {
+
+    .bulk-order-form-card {
+        max-width: calc(100% - 32px);
+
+        margin: 25px auto 60px;
+
+        padding: 25px;
+    }
+
+
+    .bulk-order-sections {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .bulk-order-form-card {
+        width: calc(100% - 24px);
+
+        max-width: none;
+
+        margin: 20px auto 50px;
+
+        padding: 20px;
+
+        border-radius: 12px;
+    }
+
+
+    .bulk-order-form-card > h3 {
+        font-size: 23px;
+
+        margin-bottom: 8px;
+    }
+
+
+    .bulk-order-form-description {
+        font-size: 14px;
+
+        line-height: 1.6;
+
+        margin-bottom: 20px;
+    }
+
+
+    .bulk-order-sections {
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+
+    .bulk-order-section {
+        padding: 18px;
+
+        border-radius: 10px;
+    }
+
+
+    .bulk-order-section h4 {
+        font-size: 18px;
+
+        margin-bottom: 17px;
+    }
+
+
+    /* =========================
+       Form Rows
+    ========================= */
+
+    .bulk-order-row {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+
+    .bulk-order-section .form-group {
+        margin-bottom: 16px;
+    }
+
+
+    /* =========================
+       Inputs
+    ========================= */
+
+    .bulk-order-section input,
+    .bulk-order-section textarea {
+        font-size: 14px;
+
+        width: 100%;
+
+        max-width: 100%;
+    }
+
+
+    .bulk-order-section input {
+        height: 43px;
+    }
+
+
+    .bulk-order-section textarea {
+        min-height: 100px;
+    }
+
+
+    /* =========================
+       Information Box
+    ========================= */
+
+    .bulk-order-info {
+        padding: 12px;
+
+        gap: 10px;
+    }
+
+
+    .bulk-order-info p {
+        font-size: 12px;
+
+        line-height: 1.55;
+    }
+
+
+    /* =========================
+       WhatsApp Button
+    ========================= */
+
+    .bulk-order-action {
+        margin-top: 20px;
+    }
+
+
+    .bulk-order-whatsapp-btn {
+        height: 50px;
+
+        font-size: 15px;
+    }
+
+
+    .bulk-order-action p {
+        margin-top: 12px;
+
+        padding: 0 8px;
+
+        font-size: 12px;
+
+        line-height: 1.6;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .bulk-order-form-card {
+        width: calc(100% - 20px);
+
+        margin: 15px auto 40px;
+
+        padding: 15px;
+
+        border-radius: 10px;
+    }
+
+
+    .bulk-order-form-card > h3 {
+        font-size: 20px;
+    }
+
+
+    .bulk-order-form-description {
+        font-size: 13px;
+
+        margin-bottom: 17px;
+    }
+
+
+    .bulk-order-sections {
+        gap: 15px;
+    }
+
+
+    .bulk-order-section {
+        padding: 15px;
+
+        border-radius: 9px;
+    }
+
+
+    .bulk-order-section h4 {
+        font-size: 17px;
+
+        margin-bottom: 15px;
+    }
+
+
+    /* =========================
+       Form
+    ========================= */
+
+    .bulk-order-row {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+
+    .bulk-order-section .form-group {
+        margin-bottom: 15px;
+    }
+
+
+    .bulk-order-section label {
+        font-size: 12px;
+
+        margin-bottom: 6px;
+    }
+
+
+    .bulk-order-section input {
+        height: 42px;
+
+        padding: 10px 12px;
+
+        font-size: 13px;
+    }
+
+
+    .bulk-order-section textarea {
+        min-height: 95px;
+
+        padding: 10px 12px;
+
+        font-size: 13px;
+    }
+
+
+    /* =========================
+       Info Box
+    ========================= */
+
+    .bulk-order-info {
+        padding: 11px;
+
+        gap: 8px;
+
+        margin-top: 2px;
+    }
+
+
+    .bulk-order-info > span {
+        font-size: 16px;
+    }
+
+
+    .bulk-order-info p {
+        font-size: 11.5px;
+
+        line-height: 1.5;
+    }
+
+
+    /* =========================
+       WhatsApp
+    ========================= */
+
+    .bulk-order-action {
+        margin-top: 18px;
+    }
+
+
+    .bulk-order-whatsapp-btn {
+        width: 100%;
+
+        height: 48px;
+
+        padding: 0 15px;
+
+        font-size: 14px;
+
+        border-radius: 7px;
+    }
+
+
+    .bulk-order-action p {
+        margin-top: 10px;
+
+        padding: 0 5px;
+
+        font-size: 11.5px;
+
+        line-height: 1.55;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .bulk-order-form-card {
+        width: calc(100% - 16px);
+
+        padding: 12px;
+    }
+
+
+    .bulk-order-section {
+        padding: 13px;
+    }
+
+
+    .bulk-order-form-card > h3 {
+        font-size: 19px;
+    }
+
+
+    .bulk-order-section h4 {
+        font-size: 16px;
+    }
+
+
+    .bulk-order-whatsapp-btn {
+        height: 46px;
+
+        font-size: 13px;
+    }
+
+}

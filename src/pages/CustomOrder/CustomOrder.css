@@ -1,0 +1,598 @@
+/* =========================================================
+   CUSTOM ORDER PAGE
+========================================================= */
+
+.custom-order-page {
+
+    width: 100%;
+
+    background: #ffffff;
+
+    padding: 40px 20px 60px;
+
+    box-sizing: border-box;
+
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.custom-order-container {
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+}
+
+
+/* =========================================================
+   CUSTOM ORDER BANNER
+========================================================= */
+
+.custom-order-banner {
+
+    width: 100%;
+
+    background: #fffaf5;
+
+    border: 1px solid #ead8c8;
+
+    border-radius: 14px;
+
+    padding: 25px 30px;
+
+    margin-bottom: 25px;
+
+    box-sizing: border-box;
+
+}
+
+
+.custom-order-banner-content {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+}
+
+
+.custom-order-icon {
+
+    width: 55px;
+
+    height: 55px;
+
+    min-width: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #fff1e5;
+
+    border-radius: 50%;
+
+    font-size: 28px;
+
+}
+
+
+.custom-order-banner h2 {
+
+    margin: 0 0 8px;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    color: #3a2920;
+
+}
+
+
+.custom-order-banner p {
+
+    margin: 0 0 8px;
+
+    color: #66574f;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+}
+
+
+.custom-order-banner small {
+
+    color: #8a4f25;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   FORM CARD
+========================================================= */
+
+.custom-order-form-card {
+
+    width: 100%;
+
+    background: #ffffff;
+
+    border: 1px solid #e6e6e6;
+
+    border-radius: 14px;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+
+}
+
+
+.custom-order-form-card > h3 {
+
+    margin: 0 0 8px;
+
+    color: #30251f;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+}
+
+
+.custom-order-form-description {
+
+    margin: 0 0 25px;
+
+    color: #777;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   DESKTOP TWO COLUMN LAYOUT
+========================================================= */
+
+.custom-order-sections {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+
+    align-items: start;
+
+}
+
+
+/* =========================================================
+   INDIVIDUAL SECTION
+========================================================= */
+
+.custom-order-section {
+
+    background: #ffffff;
+
+    border: 1px solid #eadfd8;
+
+    border-radius: 12px;
+
+    padding: 22px;
+
+    box-sizing: border-box;
+
+}
+
+
+.custom-order-section h4 {
+
+    margin: 0 0 20px;
+
+    color: #4a2c20;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================================
+   FORM ROW
+========================================================= */
+
+.custom-order-row {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.custom-order-section .form-group {
+
+    margin-bottom: 18px;
+
+}
+
+
+.custom-order-section label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #4a352b;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.custom-order-section input,
+
+.custom-order-section textarea {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 1px solid #d9d9d9;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #333;
+
+    padding: 12px 13px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: border-color 0.2s ease,
+
+                box-shadow 0.2s ease;
+
+}
+
+
+.custom-order-section input {
+
+    height: 44px;
+
+}
+
+
+.custom-order-section textarea {
+
+    min-height: 100px;
+
+    resize: vertical;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   INPUT FOCUS
+========================================================= */
+
+.custom-order-section input:focus,
+
+.custom-order-section textarea:focus {
+
+    border-color: #b66a32;
+
+    box-shadow: 0 0 0 2px rgba(182, 106, 50, 0.08);
+
+}
+
+
+/* =========================================================
+   WHATSAPP BUTTON
+========================================================= */
+
+.custom-order-whatsapp-btn {
+
+    width: 100%;
+
+    height: 52px;
+
+    margin-top: 25px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #20c463;
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease,
+
+                transform 0.2s ease;
+
+}
+
+
+.custom-order-whatsapp-btn:hover {
+
+    background: #18ad54;
+
+}
+
+
+.custom-order-whatsapp-btn:active {
+
+    transform: scale(0.99);
+
+}
+.custom-order-action {
+    margin-top: 25px;
+}
+
+.custom-order-action p {
+    margin: 16px 0 0;
+    padding: 0 10px;
+    text-align: center;
+    color: #777;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .custom-order-page {
+
+        padding: 25px 15px 45px;
+
+    }
+
+
+    .custom-order-container {
+
+        max-width: 100%;
+
+    }
+
+
+    .custom-order-banner {
+
+        padding: 20px;
+
+    }
+
+
+    .custom-order-banner-content {
+
+        align-items: flex-start;
+
+    }
+
+
+    .custom-order-banner h2 {
+
+        font-size: 22px;
+
+    }
+
+
+    .custom-order-form-card {
+
+        padding: 20px;
+
+    }
+
+
+    .custom-order-sections {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .custom-order-page {
+
+        padding: 15px 10px 35px;
+
+        background: #ffffff;
+
+    }
+
+
+    .custom-order-banner {
+
+        padding: 18px;
+
+        border-radius: 10px;
+
+        margin-bottom: 15px;
+
+    }
+
+
+    .custom-order-banner-content {
+
+        gap: 12px;
+
+    }
+
+
+    .custom-order-icon {
+
+        width: 42px;
+
+        height: 42px;
+
+        min-width: 42px;
+
+        font-size: 22px;
+
+    }
+
+
+    .custom-order-banner h2 {
+
+        font-size: 20px;
+
+    }
+
+
+    .custom-order-banner p {
+
+        font-size: 13px;
+
+    }
+
+
+    .custom-order-banner small {
+
+        font-size: 12px;
+
+    }
+
+
+    .custom-order-form-card {
+
+        padding: 15px;
+
+        border-radius: 10px;
+
+    }
+
+
+    .custom-order-form-card > h3 {
+
+        font-size: 20px;
+
+    }
+
+
+    .custom-order-form-description {
+
+        font-size: 13px;
+
+        margin-bottom: 18px;
+
+    }
+
+
+    .custom-order-section {
+
+        padding: 15px;
+
+        border-radius: 9px;
+
+    }
+
+
+    .custom-order-section h4 {
+
+        font-size: 17px;
+
+        margin-bottom: 16px;
+
+    }
+
+
+    .custom-order-row {
+
+        grid-template-columns: 1fr;
+
+        gap: 0;
+
+    }
+
+
+    .custom-order-section input {
+
+        height: 42px;
+
+    }
+
+
+    .custom-order-section textarea {
+
+        min-height: 100px;
+
+    }
+    .custom-order-sections {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+    }
+
+
+    .custom-order-whatsapp-btn {
+
+        height: 48px;
+
+        font-size: 15px;
+
+    }
+
+}

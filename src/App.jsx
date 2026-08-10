@@ -10,6 +10,8 @@ import Contact from "./pages/Contact/Contact";
 import About from "./pages/About/About";
 import BulkOrder from "./pages/BulkOrder/BulkOrder";
 import Checkout from "./pages/Checkout/Checkout";
+import CustomOrder from "./pages/CustomOrder/CustomOrder";
+import BulkOrderForm from "./pages/BulkOrder/BulkOrderForm";
 
 import "./App.css";
 
@@ -68,6 +70,14 @@ function App() {
                 <Route
                     path="/qa"
                     element={<QA />}
+                />
+                <Route
+                    path="/custom-order"
+                    element={<CustomOrder />}
+                />
+                <Route
+                    path="/bulk-order-form"
+                    element={<BulkOrderForm />}
                 />
 
             </Route>
