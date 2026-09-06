@@ -20,6 +20,21 @@ import {
 /* ================= Images ================= */
 
 import sweet1 from "../../assets/images/sweetsPhotos/pootharekulu/WhatsApp Image 2026-08-03 at 2.03.33 PM-3.jpeg";
+
+import plainBellam from "../../assets/sweetsPhotos/Plain bellam putharekulu.jpeg";
+import bellamBadam from "../../assets/sweetsPhotos/Bellam badam and kaju putharekulu.jpeg";
+import bellamDryFruit from "../../assets/sweetsPhotos/Special bellam dryfruits putharekulu.jpeg";
+import halfLeaf from "../../assets/sweetsPhotos/Half leaf bellam dryfruits putharekulu.jpeg";
+
+import fullLeaf from "../../assets/sweetsPhotos/Full leaf bellam dryfruits putharekulu.jpeg";
+import sugarFree from "../../assets/sweetsPhotos/Sugarfree dryfruits putharekulu.jpeg";
+
+import karapadiDryFruit from "../../assets/sweetsPhotos/Karapodi dryfruits putharekulu.jpeg";
+
+import chocolateDryFruit from "../../assets/sweetsPhotos/Chocolate dryfruits putharekulu.jpeg";
+import oreo from "../../assets/sweetsPhotos/Oreo dryfruits putharekulu.jpeg";
+import honey from "../../assets/sweetsPhotos/Honey dryfruits putharekulu.jpeg";
+import dates from "../../assets/sweetsPhotos/Dates dryfruits putharekulu.jpeg";
 import sweet2 from "../../assets/images/sweetsPhotos/Bellam_Pootharekulu_1.webp";
 import sweet3 from "../../assets/images/sweetsPhotos/Bellam_Pootharekulu_1.webp";
 import sweet4 from "../../assets/images/sweetsPhotos/Bellam_Pootharekulu_1.webp";
@@ -106,7 +121,7 @@ function Products() {
             id: 1,
             category: "putarekulu",
             badge: "BESTSELLER",
-            image: sweet1,
+            image: plainBellam,
             name: "Plain Bellam Putarekulu",
             price: 120,
             weights: ["Box (10 pcs)"]
@@ -116,7 +131,7 @@ function Products() {
             id: 2,
             category: "putarekulu",
             badge: "POPULAR",
-            image: sweet1,
+            image: plainBellam,
             name: "Plain Sugar Putarekulu",
             price: 120,
             weights: ["Box"]
@@ -126,7 +141,7 @@ function Products() {
             id: 3,
             category: "putarekulu",
             badge: "BESTSELLER",
-            image: sweet1,
+            image: bellamBadam,
             name: "Bellam Badam & Kaju Putarekulu",
             price: 140,
             weights: ["Box"]
@@ -146,7 +161,7 @@ function Products() {
             id: 5,
             category: "putarekulu",
             badge: "PREMIUM",
-            image: sweet1,
+            image: bellamDryFruit,
             name: "Bellam Dry Fruits Putarekulu",
             price: 180,
             weights: ["Box"]
@@ -166,7 +181,7 @@ function Products() {
             id: 7,
             category: "putarekulu",
             badge: "SPECIAL",
-            image: sweet1,
+            image: bellamDryFruit,
             name: "Special Bellam Dry Fruits Putarekulu",
             price: 250,
             weights: ["Box"]
@@ -185,7 +200,7 @@ function Products() {
             id: 9,
             category: "putarekulu",
             badge: "BESTSELLER",
-            image: sweet1,
+            image: halfLeaf,
             name: "Half Leaf Bellam Dry Fruits Putarekulu",
             price: 350,
             weights: ["Box"]
@@ -205,7 +220,7 @@ function Products() {
             id: 11,
             category: "putarekulu",
             badge: "PREMIUM",
-            image: sweet1,
+            image: fullLeaf,
             name: "Full Leaf Bellam Dry Fruits Putarekulu",
             price: 500,
             weights: ["Box"]
@@ -255,7 +270,7 @@ function Products() {
             id: 16,
             category: "putarekulu",
             badge: "HEALTHY",
-            image: sweet1,
+            image: sugarFree,
             name: "Sugar Free Dry Fruits Putarekulu",
             price: 350,
             weights: ["Box"]
@@ -265,7 +280,7 @@ function Products() {
             id: 17,
             category: "putarekulu",
             badge: "SPICY",
-            image: sweet1,
+            image: karapadiDryFruit,
             name: "Karapodi Dry Fruits Putarekulu",
             price: 250,
             weights: ["Box"]
@@ -275,7 +290,7 @@ function Products() {
             id: 18,
             category: "putarekulu",
             badge: "KIDS",
-            image: sweet1,
+            image: chocolateDryFruit,
             name: "Chocolate Dry Fruits Putarekulu",
             price: 400,
             weights: ["Box"]
@@ -285,7 +300,7 @@ function Products() {
             id: 19,
             category: "putarekulu",
             badge: "KIDS",
-            image: sweet1,
+            image: oreo,
             name: "Oreo Dry Fruits Putarekulu",
             price: 400,
             weights: ["Box"]
@@ -295,7 +310,7 @@ function Products() {
             id: 20,
             category: "putarekulu",
             badge: "POPULAR",
-            image: sweet1,
+            image: honey,
             name: "Honey Dry Fruits Putarekulu",
             price: 300,
             weights: ["Box"]
@@ -305,7 +320,7 @@ function Products() {
             id: 21,
             category: "putarekulu",
             badge: "PREMIUM",
-            image: sweet1,
+            image: dates,
             name: "Dates Dry Fruits Putarekulu",
             price: 400,
             weights: ["Box (10 pcs)"]
