@@ -1,622 +1,290 @@
-import "./ShoppingAssistant.css";
-
-import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 import {
     MessageCircle,
     X,
     Package,
     Phone,
-    Truck,
-    MoreHorizontal,
-    ShoppingBag,
-    MessageCircleMore,
-    MapPin,
-    Mail,
-    Clock
+    Send
 } from "lucide-react";
-import {
-    FaFacebookF,
-    FaInstagram,
-    FaYoutube
-} from "react-icons/fa";
 
-import BotMessage from "./BotMessage";
-import UserMessage from "./UserMessage";
-import MessageButton from "./MessageButton";
+import { useNavigate } from "react-router-dom";
 
-import products from "./products";
+import "./ShoppingAssistant.css";
+
 
 function ShoppingAssistant() {
 
     const navigate = useNavigate();
 
+    /* =========================================================
+       Assistant State
+    ========================================================= */
+
     const [isOpen, setIsOpen] = useState(false);
 
-    const [messages, setMessages] = useState([]);
 
-    const messagesEndRef = useRef(null);
+    /* =========================================================
+       WhatsApp
+    ========================================================= */
 
-    const scrollToBottom = () => {
+    const handleWhatsApp = () => {
 
-        messagesEndRef.current?.scrollIntoView({
-            behavior: "smooth"
-        });
+        const phoneNumber = "917993669326";
 
-    };
+        const message =
+            "Hello Kumar Neti Putarekulu, I would like to know more about your sweets.";
 
-    useEffect(() => {
+        const whatsappUrl =
+            `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
-        scrollToBottom();
+        const newWindow = window.open(
+            whatsappUrl,
+            "_blank",
+            "noopener,noreferrer"
+        );
 
-    }, [messages]);
+        if (!newWindow) {
 
-    const getCurrentTime = () => {
-
-        return new Date().toLocaleTimeString([], {
-
-            hour: "2-digit",
-
-            minute: "2-digit"
-
-        });
-
-    };
-
-    const getGreeting = () => {
-
-        const hour = new Date().getHours();
-
-        if (hour < 12) {
-
-            return "Good Morning ☀️";
+            window.location.href = whatsappUrl;
 
         }
 
-        if (hour < 17) {
-
-            return "Good Afternoon 🌤️";
-
-        }
-
-        return "Good Evening 🌙";
-
     };
 
-    useEffect(() => {
 
-        if (isOpen && messages.length === 0) {
-
-            setMessages([
-
-                {
-
-                    sender: "bot",
-
-                    type: "welcome",
-
-                    time: getCurrentTime()
-
-                }
-
-            ]);
-
-        }
-
-    }, [isOpen]);
-
-    const addUserMessage = (text) => {
-
-        setMessages((prev) => [
-
-            ...prev,
-
-            {
-
-                sender: "user",
-
-                text,
-
-                time: getCurrentTime()
-
-            }
-
-        ]);
-
-    };
-
-    const addBotMessage = (type) => {
-
-        setTimeout(() => {
-
-            setMessages((prev) => [
-
-                ...prev,
-
-                {
-
-                    sender: "bot",
-
-                    type,
-
-                    time: getCurrentTime()
-
-                }
-
-            ]);
-
-        }, 700);
-
-    };
+    /* =========================================================
+       Navigation
+    ========================================================= */
 
     const handleProducts = () => {
 
-        addUserMessage("📦 Product List");
+        setIsOpen(false);
 
-        addBotMessage("products");
+        navigate("/products");
 
     };
+
 
     const handleContact = () => {
 
-        addUserMessage("📞 Contact Us");
+        setIsOpen(false);
 
-        addBotMessage("contact");
-
-    };
-
-    const handleDelivery = () => {
-
-        addUserMessage("🚚 Delivery Information");
-
-        addBotMessage("delivery");
+        navigate("/contact");
 
     };
 
-    const handleMore = () => {
 
-        addUserMessage("⋯ More");
+    /* =========================================================
+       Toggle Assistant
+    ========================================================= */
 
-        addBotMessage("more");
+    const handleToggle = () => {
+
+        setIsOpen((previous) => !previous);
 
     };
-        return (
 
-        <>
 
-            {/* Floating Chat Button */}
+    return (
 
-            <button
-                className="shopping-chat-button"
-                onClick={() => setIsOpen(!isOpen)}
-            >
+        <div className="shopping-assistant">
 
-                {
+            {/* =================================================
+                Assistant Popup
+            ================================================= */}
 
-                    isOpen
+            {isOpen && (
 
-                        ? <X size={28} />
+                <div className="shopping-assistant-popup">
 
-                        : <MessageCircle size={28} />
+                    {/* ================= Header ================= */}
 
-                }
+                    <div className="shopping-assistant-header">
 
-            </button>
+                        <div className="shopping-assistant-header-info">
 
-            {/* Chat Window */}
+                            <div className="shopping-assistant-avatar">
 
-            {
+                                <MessageCircle size={20} />
 
-                isOpen && (
-
-                    <div className="shopping-chat-container">
-
-                        {/* Header */}
-
-                        <div className="shopping-chat-header">
+                            </div>
 
                             <div>
 
                                 <h3>
-
-                                    Kumar Shopping Assistant
-
+                                    Kumar Assistant
                                 </h3>
 
                                 <span>
-
-                                    🟢 Online
-
+                                    Online
                                 </span>
 
                             </div>
 
+                        </div>
+
+
+                        <button
+                            type="button"
+                            className="shopping-assistant-close"
+                            onClick={handleToggle}
+                            aria-label="Close assistant"
+                        >
+
+                            <X size={20} />
+
+                        </button>
+
+                    </div>
+
+
+                    {/* =================================================
+                        Chat Content
+                    ================================================= */}
+
+                    <div className="shopping-assistant-body">
+
+                        <div className="shopping-assistant-message">
+
+                            <p>
+                                Hello! 👋
+                            </p>
+
+                            <p>
+                                Welcome to Kumar Neti Putarekulu.
+                                How can we help you today?
+                            </p>
+
+                        </div>
+                        {/* =================================================
+                            Quick Actions
+                        ================================================= */}
+
+                        <div className="shopping-assistant-options">
+
+                            {/* ================= Products ================= */}
+
                             <button
-
-                                className="shopping-close-btn"
-
-                                onClick={() => setIsOpen(false)}
-
+                                type="button"
+                                className="shopping-assistant-option"
+                                onClick={handleProducts}
                             >
 
-                                <X size={20} />
+                                <span className="shopping-assistant-option-icon">
+
+                                    <Package size={18} />
+
+                                </span>
+
+                                <span className="shopping-assistant-option-text">
+
+                                    Products
+
+                                </span>
+
+                            </button>
+
+
+                            {/* ================= Contact ================= */}
+
+                            <button
+                                type="button"
+                                className="shopping-assistant-option"
+                                onClick={handleContact}
+                            >
+
+                                <span className="shopping-assistant-option-icon">
+
+                                    <Phone size={18} />
+
+                                </span>
+
+                                <span className="shopping-assistant-option-text">
+
+                                    Contact Us
+
+                                </span>
+
+                            </button>
+
+
+                            {/* ================= WhatsApp ================= */}
+
+                            <button
+                                type="button"
+                                className="shopping-assistant-option"
+                                onClick={handleWhatsApp}
+                            >
+
+                                <span className="shopping-assistant-option-icon">
+
+                                    <Send size={18} />
+
+                                </span>
+
+                                <span className="shopping-assistant-option-text">
+
+                                    WhatsApp
+
+                                </span>
 
                             </button>
 
                         </div>
 
-                        {/* Chat Body */}
 
-                        <div className="shopping-chat-body">
+                        {/* =================================================
+                            Assistant Footer Message
+                        ================================================= */}
 
-                            {
+                        <div className="shopping-assistant-footer">
 
-                                messages.map((message, index) => {
-
-                                    if (message.sender === "user") {
-
-                                        return (
-
-                                            <UserMessage
-
-                                                key={index}
-
-                                                time={message.time}
-
-                                            >
-
-                                                {message.text}
-
-                                            </UserMessage>
-
-                                        );
-
-                                    }
-
-                                    return (
-
-                                        <BotMessage
-
-                                            key={index}
-
-                                            time={message.time}
-
-                                        >
-
-                                            {
-
-                                                message.type === "welcome" && (
-
-                                                    <>
-
-                                                        <h4>
-
-                                                            {getGreeting()} 👋
-
-                                                        </h4>
-
-                                                        <p>
-
-                                                            Welcome to
-
-                                                            <strong>
-
-                                                                {" "}Kumar Neti Putarekulu
-
-                                                            </strong>
-
-                                                        </p>
-
-                                                        <p>
-
-                                                            I'm <strong>Chitti</strong> 😊
-
-                                                        </p>
-
-                                                        <p>
-
-                                                            Your Shopping Assistant.
-
-                                                        </p>
-
-                                                        <p>
-
-                                                            How can I help you today?
-
-                                                        </p>
-
-                                                        <div className="chat-buttons">
-
-                                                            <MessageButton
-
-                                                                icon={<Package size={18} />}
-
-                                                                text="Product List"
-
-                                                                onClick={handleProducts}
-
-                                                            />
-
-                                                            <MessageButton
-
-                                                                icon={<Phone size={18} />}
-
-                                                                text="Contact Us"
-
-                                                                onClick={handleContact}
-
-                                                            />
-
-                                                            <MessageButton
-
-                                                                icon={<Truck size={18} />}
-
-                                                                text="Delivery Info"
-
-                                                                onClick={handleDelivery}
-
-                                                            />
-
-                                                            <MessageButton
-
-                                                                icon={<MoreHorizontal size={18} />}
-
-                                                                text="More"
-
-                                                                onClick={handleMore}
-
-                                                            />
-
-                                                        </div>
-
-                                                    </>
-
-                                                )
-
-                                            }
-                                                                                        {
-
-                                                message.type === "products" && (
-
-                                                    <>
-
-                                                        <h4>📦 Our Products</h4>
-
-                                                        <p>
-                                                            Here are our most popular sweets.
-                                                        </p>
-
-                                                        <div className="product-list">
-
-                                                            {
-
-                                                                products.map((product) => (
-
-                                                                    <div
-                                                                        key={product.id}
-                                                                        className="product-card"
-                                                                    >
-
-                                                                        <div>
-
-                                                                            <strong>
-
-                                                                                {product.name}
-
-                                                                            </strong>
-
-                                                                            <span>
-
-                                                                                {product.price}
-
-                                                                            </span>
-
-                                                                        </div>
-
-                                                                    </div>
-
-                                                                ))
-
-                                                            }
-
-                                                        </div>
-
-                                                        <MessageButton
-
-                                                            icon={<ShoppingBag size={18} />}
-
-                                                            text="View All Products"
-
-                                                            onClick={() => navigate("/products")}
-
-                                                        />
-
-                                                    </>
-
-                                                )
-
-                                            }
-
-                                            {
-
-                                                message.type === "contact" && (
-
-                                                    <>
-
-                                                        <h4>📞 Contact Us</h4>
-
-                                                        <p>
-
-                                                            We'd love to hear from you 😊
-
-                                                        </p>
-
-                                                        <div className="contact-item">
-
-                                                            <Phone size={18} />
-
-                                                            <span>
-
-                                                                +91 9876543210
-
-                                                            </span>
-
-                                                        </div>
-
-                                                        <div className="contact-item">
-
-                                                            <Mail size={18} />
-
-                                                            <span>
-
-                                                                kumarsweets@gmail.com
-
-                                                            </span>
-
-                                                        </div>
-
-                                                        <div className="contact-item">
-
-                                                            <MapPin size={18} />
-
-                                                            <span>
-
-                                                                Atreyapuram,
-                                                                Andhra Pradesh
-
-                                                            </span>
-
-                                                        </div>
-
-                                                        <MessageButton
-
-                                                            icon={<Phone size={18} />}
-
-                                                            text="Call Now"
-
-                                                            href="tel:+919876543210"
-
-                                                        />
-
-                                                    </>
-
-                                                )
-
-                                            }
-
-                                            {
-
-                                                message.type === "delivery" && (
-
-                                                    <>
-
-                                                        <h4>
-
-                                                            🚚 Delivery Information
-
-                                                        </h4>
-
-                                                        <p>
-
-                                                            We deliver across India 🇮🇳
-
-                                                        </p>
-
-                                                        <div className="delivery-box">
-
-                                                            <Clock size={18} />
-
-                                                            <span>
-
-                                                                Delivery within
-                                                                3-5 working days.
-
-                                                            </span>
-
-                                                        </div>
-
-                                                        <div className="delivery-box">
-
-                                                            🚚 Free Shipping above ₹799
-
-                                                        </div>
-
-                                                    </>
-
-                                                )
-
-                                            }
-                                                                                        {
-
-                                                message.type === "more" && (
-
-                                                    <>
-
-                                                        <h4>✨ More Options</h4>
-
-                                                        <p>
-                                                            Choose one of the options below.
-                                                        </p>
-
-                                                        <MessageButton
-
-                                                            icon={<MessageCircleMore size={18} />}
-
-                                                            text="WhatsApp"
-
-                                                            href="https://wa.me/919876543210"
-
-                                                        />
-
-                                                        <MessageButton
-
-                                                            icon={<FaInstagram size={18} />}
-
-                                                            text="FaInstagram"
-
-                                                            href="https://FaInstagram.com"
-
-                                                        />
-
-                                                        <MessageButton
-
-                                                            icon={<MapPin size={18} />}
-
-                                                            text="Location"
-
-                                                            href="https://maps.google.com"
-
-                                                        />
-
-                                                    </>
-
-                                                )
-
-                                            }
-
-                                        </BotMessage>
-
-                                    );
-
-                                })
-
-                            }
-
-                            <div ref={messagesEndRef}></div>
+                            <span>
+                                Need help? Choose an option above.
+                            </span>
 
                         </div>
 
                     </div>
 
-                )
+                </div>
 
-            }
+            )}
 
-        </>
+
+            {/* =========================================================
+                Floating Assistant Button
+            ========================================================= */}
+
+            <button
+                type="button"
+                className={`shopping-assistant-toggle ${
+                    isOpen ? "active" : ""
+                }`}
+                onClick={handleToggle}
+                aria-label={
+                    isOpen
+                        ? "Close shopping assistant"
+                        : "Open shopping assistant"
+                }
+            >
+
+                {isOpen ? (
+
+                    <X size={24} />
+
+                ) : (
+
+                    <MessageCircle size={24} />
+
+                )}
+
+            </button>
+
+        </div>
 
     );
-
-}
+    }
 
 export default ShoppingAssistant;

@@ -1,931 +1,447 @@
-/* ==========================================================
-   SHOPPING ASSISTANT V2
-========================================================== */
+/* =========================================================
+   Shopping Assistant
+========================================================= */
 
-:root{
-
-    --primary:#8B4513;
-
-    --primary-dark:#6f3410;
-
-    --cream:#FFF8F0;
-
-    --white:#ffffff;
-
-    --text:#3D251E;
-
-    --gray:#6B7280;
-
-    --border:#F1E2D3;
-
+.shopping-assistant {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 9999;
 }
 
-/* ==========================================================
-   Floating Button
-========================================================== */
 
-.shopping-chat-button{
+/* =========================================================
+   Popup
+========================================================= */
 
-    position:fixed;
+.shopping-assistant-popup {
+    position: absolute;
+    right: 0;
+    bottom: 72px;
 
-    right:24px;
+    width: 360px;
+    max-width: calc(100vw - 32px);
+    height: 520px;
 
-    bottom:24px;
+    background: #fff;
 
-    width:60px;
+    border: 1px solid #eee;
+    border-radius: 20px;
 
-    height:60px;
+    overflow: hidden;
 
-    border:none;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
 
-    border-radius:50%;
+    display: flex;
+    flex-direction: column;
 
-    background:var(--primary);
-
-    color:var(--white);
-
-    cursor:pointer;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,.18);
-
-    transition:.3s;
-
-    z-index:99999;
-
+    animation: assistantPopup 0.25s ease;
 }
 
-.shopping-chat-button:hover{
+@keyframes assistantPopup {
 
-    transform:translateY(-3px);
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.97);
+    }
 
-    background:var(--primary-dark);
-
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
-.shopping-chat-button:active{
 
-    transform:scale(.95);
-
-}
-
-.shopping-chat-button::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    border-radius:50%;
-
-    border:2px solid rgba(139,69,19,.35);
-
-    animation:pulse 2s infinite;
-
-}
-
-/* ==========================================================
-   Chat Window
-========================================================== */
-
-.shopping-chat-container{
-
-    position:fixed;
-
-    right:24px;
-
-    bottom:98px;
-
-    width:365px;
-
-    height:580px;
-
-    background:var(--cream);
-
-    border-radius:24px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    overflow:hidden;
-
-    box-shadow:
-        0 25px 60px rgba(0,0,0,.18);
-
-    animation:chatOpen .35s ease;
-
-    z-index:99999;
-
-}
-
-/* ==========================================================
+/* =========================================================
    Header
-========================================================== */
+========================================================= */
 
-.shopping-chat-header{
+.shopping-assistant-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    background:linear-gradient(
-        135deg,
-        #8B4513,
-        #A35A22
-    );
+    padding: 14px 16px;
 
-    color:white;
+    border-bottom: 1px solid #eee;
 
-    padding:14px 18px;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    flex-shrink:0;
-
+    background: #fff;
 }
 
-.shopping-chat-header h3{
-
-    margin:0;
-
-    font-size:18px;
-
-    font-weight:700;
-
+.shopping-assistant-header-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.shopping-chat-header span{
+.shopping-assistant-avatar {
+    width: 40px;
+    height: 40px;
 
-    display:block;
+    border-radius: 50%;
 
-    margin-top:3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    font-size:12px;
-
-    opacity:.95;
-
+    background: #f7f1e8;
+    color: #8b5e34;
 }
 
-.shopping-close-btn{
+.shopping-assistant-header h3 {
+    margin: 0;
 
-    width:34px;
+    font-size: 16px;
+    font-weight: 600;
 
-    height:34px;
-
-    border:none;
-
-    border-radius:50%;
-
-    background:rgba(255,255,255,.18);
-
-    color:white;
-
-    cursor:pointer;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    transition:.3s;
-
+    color: #2d241e;
 }
 
-.shopping-close-btn:hover{
+.shopping-assistant-header span {
+    display: block;
 
-    background:rgba(255,255,255,.3);
+    margin-top: 2px;
 
+    font-size: 12px;
+    color: #5d8a61;
 }
 
-/* ==========================================================
-   Chat Body
-========================================================== */
 
-.shopping-chat-body{
+/* =========================================================
+   Close Button
+========================================================= */
 
-    flex:1;
+.shopping-assistant-close {
+    width: 34px;
+    height: 34px;
 
-    overflow-y:auto;
+    border: none;
+    border-radius: 50%;
 
-    overflow-x:hidden;
+    background: transparent;
+    color: #555;
 
-    padding:18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    display:flex;
+    cursor: pointer;
 
-    flex-direction:column;
-
-    gap:16px;
-
+    transition: 0.2s ease;
 }
 
-.shopping-chat-body::-webkit-scrollbar{
-
-    width:5px;
-
+.shopping-assistant-close:hover {
+    background: #f5f5f5;
 }
 
-.shopping-chat-body::-webkit-scrollbar-track{
 
-    background:transparent;
+/* =========================================================
+   Body
+========================================================= */
 
+.shopping-assistant-body {
+    flex: 1;
+
+    padding: 16px;
+
+    overflow-y: auto;
+
+    background: #faf9f7;
+
+    display: flex;
+    flex-direction: column;
 }
 
-.shopping-chat-body::-webkit-scrollbar-thumb{
 
-    background:#D2B48C;
+/* =========================================================
+   Assistant Message
+========================================================= */
 
-    border-radius:20px;
+.shopping-assistant-message {
+    align-self: flex-end;
 
+    max-width: 88%;
+
+    padding: 13px 15px;
+
+    background: #fff;
+
+    border-radius: 18px 18px 5px 18px;
+
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.07);
+
+    color: #3b3028;
 }
 
-.shopping-chat-container *::selection{
+.shopping-assistant-message p {
+    margin: 0;
 
-    background:var(--primary);
-
-    color:white;
-
-}
-/* ==========================================================
-   Bot Message
-========================================================== */
-
-.bot-message-wrapper{
-
-    display:flex;
-
-    align-items:flex-end;
-
-    gap:10px;
-
-    margin-bottom:4px;
-
+    font-size: 13px;
+    line-height: 1.5;
 }
 
-.bot-avatar{
+.shopping-assistant-message p + p {
+    margin-top: 6px;
+}
+/* =========================================================
+   Quick Action Options
+========================================================= */
 
-    width:34px;
+.shopping-assistant-options {
+    display: flex;
+    flex-direction: column;
 
-    height:34px;
+    gap: 10px;
 
-    border-radius:50%;
-
-    background:linear-gradient(
-        135deg,
-        #8B4513,
-        #A35A22
-    );
-
-    color:white;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    font-size:15px;
-
-    flex-shrink:0;
-
-    box-shadow:0 4px 12px rgba(0,0,0,.15);
-
+    margin-top: 18px;
 }
 
-.bot-message{
+.shopping-assistant-option {
+    width: 100%;
 
-    flex:1;
+    min-height: 48px;
 
-    max-width:88%;
+    padding: 10px 14px;
 
-    background:#ffffff;
+    border: 1px solid #e8e2da;
+    border-radius: 12px;
 
-    border-radius:18px 18px 18px 6px;
+    background: #fff;
+    color: #332a24;
 
-    padding:14px;
+    display: flex;
+    align-items: center;
 
-    box-shadow:0 6px 18px rgba(0,0,0,.08);
+    gap: 12px;
 
-    transition:.25s;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
 
-}
+    text-align: left;
 
-.bot-message:hover{
-
-    transform:translateY(-2px);
-
-}
-
-.bot-message h4{
-
-    margin:0 0 10px;
-
-    color:var(--primary);
-
-    font-size:18px;
-
-}
-
-.bot-message p{
-
-    margin:6px 0;
-
-    color:#555;
-
-    line-height:1.6;
-
-    font-size:14px;
-
-}
-
-.message-time{
-
-    display:block;
-
-    margin-top:10px;
-
-    text-align:right;
-
-    font-size:11px;
-
-    color:#999;
-
-}
-
-/* ==========================================================
-   User Message
-========================================================== */
-
-.user-message-wrapper{
-
-    display:flex;
-
-    justify-content:flex-end;
-
-    margin-bottom:4px;
-
-}
-
-.user-message{
-
-    max-width:80%;
-
-    background:var(--primary);
-
-    color:white;
-
-    padding:11px 15px;
-
-    border-radius:18px 18px 6px 18px;
-
-    font-size:14px;
-
-    line-height:1.6;
-
-    box-shadow:0 6px 18px rgba(0,0,0,.12);
-
-    transition:.25s;
-
-}
-
-.user-message:hover{
-
-    transform:translateY(-2px);
-
-}
-
-.user-message-time{
-
-    display:block;
-
-    margin-top:8px;
-
-    text-align:right;
-
-    font-size:11px;
-
-    color:rgba(255,255,255,.75);
-
-}
-
-/* ==========================================================
-   Quick Action Buttons
-========================================================== */
-
-.chat-buttons{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:10px;
-
-    margin-top:16px;
-
-}
-
-.message-button{
-
-    width:100%;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:12px;
-
-    padding:11px 14px;
-
-    border:none;
-
-    border-radius:14px;
-
-    background:#FFF8F0;
-
-    color:var(--text);
-
-    text-decoration:none;
-
-    font-size:14px;
-
-    font-weight:600;
-
-    cursor:pointer;
-
-    transition:.25s;
-
-}
-
-.message-button:hover{
-
-    background:var(--primary);
-
-    color:white;
-
-    transform:translateY(-2px);
-
-    box-shadow:0 8px 18px rgba(139,69,19,.20);
-
-}
-
-.message-button-icon{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-}
-
-/* ==========================================================
-   Product List
-========================================================== */
-
-.product-list{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:10px;
-
-    margin:15px 0;
-
-}
-
-.product-card{
-
-    background:white;
-
-    border:1px solid var(--border);
-
-    border-radius:14px;
-
-    padding:12px 14px;
-
-    transition:.25s;
-
-    cursor:pointer;
-
-}
-
-.product-card:hover{
-
-    transform:translateY(-2px);
-
-    box-shadow:0 8px 18px rgba(0,0,0,.08);
-
-}
-
-.product-card strong{
-
-    display:block;
-
-    color:var(--text);
-
-    margin-bottom:4px;
-
-    font-size:14px;
-
-}
-
-.product-card span{
-
-    color:var(--primary);
-
-    font-size:13px;
-
-    font-weight:600;
-
-}
-
-/* ==========================================================
-   Contact / Delivery Cards
-========================================================== */
-
-.contact-item,
-
-.delivery-box{
-
-    background:white;
-
-    border:1px solid var(--border);
-
-    border-radius:14px;
-
-    padding:12px 14px;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-
-    color:#555;
-
-    margin-top:10px;
-
-    transition:.25s;
-
-}
-
-.contact-item:hover,
-
-.delivery-box:hover{
-
-    transform:translateY(-2px);
-
-    box-shadow:0 8px 18px rgba(0,0,0,.08);
-
-}
-/* ==========================================================
-   Animations
-========================================================== */
-
-@keyframes chatOpen{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(35px) scale(.94);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0) scale(1);
-
-    }
-
-}
-
-@keyframes pulse{
-
-    0%{
-
-        transform:scale(1);
-
-        opacity:.8;
-
-    }
-
-    70%{
-
-        transform:scale(1.45);
-
-        opacity:0;
-
-    }
-
-    100%{
-
-        transform:scale(1.45);
-
-        opacity:0;
-
-    }
-
-}
-
-@keyframes messageFade{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(12px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-
-}
-
-.bot-message-wrapper,
-
-.user-message-wrapper{
-
-    animation:messageFade .3s ease;
-
-}
-
-/* ==========================================================
-   Footer (Future Ready)
-========================================================== */
-
-.shopping-chat-footer{
-
-    padding:12px 16px;
-
-    border-top:1px solid var(--border);
-
-    background:white;
-
-    flex-shrink:0;
-
-}
-
-.shopping-chat-footer input{
-
-    width:100%;
-
-    border:none;
-
-    outline:none;
-
-    background:#F8F8F8;
-
-    padding:12px 15px;
-
-    border-radius:30px;
-
-    font-size:14px;
-
-}
-
-/* ==========================================================
-   Better Focus
-========================================================== */
-
-.shopping-chat-button:focus,
-
-.shopping-close-btn:focus,
-
-.message-button:focus{
-
-    outline:2px solid rgba(139,69,19,.25);
-
-    outline-offset:3px;
-
-}
-
-/* ==========================================================
-   Smooth Transition
-========================================================== */
-
-.shopping-chat-container *{
+    cursor: pointer;
 
     transition:
-
-        background .25s,
-
-        color .25s,
-
-        transform .25s,
-
-        box-shadow .25s;
-
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
 }
 
-/* ==========================================================
-   Tablet
-========================================================== */
+.shopping-assistant-option:hover {
+    background: #faf5ee;
+    border-color: #d8c8b7;
 
-@media (max-width:992px){
-
-    .shopping-chat-container{
-
-        width:350px;
-
-        height:560px;
-
-    }
-
+    transform: translateY(-1px);
 }
 
-/* ==========================================================
+.shopping-assistant-option:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   Option Icon
+========================================================= */
+
+.shopping-assistant-option-icon {
+    width: 34px;
+    height: 34px;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f7f1e8;
+    color: #8b5e34;
+}
+
+.shopping-assistant-option-text {
+    flex: 1;
+}
+
+
+/* =========================================================
+   Footer
+========================================================= */
+
+.shopping-assistant-footer {
+    margin-top: auto;
+    padding-top: 18px;
+
+    text-align: center;
+
+    font-size: 11px;
+    line-height: 1.4;
+
+    color: #888;
+}
+
+
+/* =========================================================
+   Floating Button
+========================================================= */
+
+.shopping-assistant-toggle {
+    width: 56px;
+    height: 56px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #8b5e34;
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.shopping-assistant-toggle:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+}
+
+.shopping-assistant-toggle.active {
+    transform: rotate(0deg);
+}
+
+/* =========================================================
    Mobile
-========================================================== */
+========================================================= */
 
-@media (max-width:768px){
+@media (max-width: 480px) {
 
-    .shopping-chat-button{
-
-        width:56px;
-
-        height:56px;
-
-        right:18px;
-
-        bottom:18px;
-
+    .shopping-assistant {
+        right: 14px;
+        bottom: 14px;
     }
 
-    .shopping-chat-container{
 
-        width:94%;
+    /* -----------------------------------------
+       Popup
+    ----------------------------------------- */
 
-        height:82vh;
+    .shopping-assistant-popup {
+        width: calc(100vw - 28px);
+        max-width: 360px;
 
-        right:3%;
+        height: 72vh;
+        max-height: 620px;
+        min-height: 430px;
 
-        bottom:88px;
+        right: 0;
+        bottom: 68px;
 
-        border-radius:22px;
-
+        border-radius: 20px;
     }
 
-    .shopping-chat-header{
 
-        padding:12px 16px;
+    /* -----------------------------------------
+       Header
+    ----------------------------------------- */
 
+    .shopping-assistant-header {
+        padding: 12px 14px;
     }
 
-    .shopping-chat-header h3{
-
-        font-size:17px;
-
+    .shopping-assistant-avatar {
+        width: 36px;
+        height: 36px;
     }
 
-    .bot-message,
-
-    .user-message{
-
-        max-width:92%;
-
-        font-size:14px;
-
+    .shopping-assistant-header h3 {
+        font-size: 15px;
     }
 
-}
-
-/* ==========================================================
-   Small Phones
-========================================================== */
-
-@media (max-width:480px){
-
-    .shopping-chat-container{
-
-        width:100%;
-
-        height:100vh;
-
-        right:0;
-
-        bottom:0;
-
-        border-radius:0;
-
+    .shopping-assistant-header span {
+        font-size: 11px;
     }
 
-    .shopping-chat-button{
 
-        right:14px;
+    /* -----------------------------------------
+       Body
+    ----------------------------------------- */
 
-        bottom:14px;
-
-        width:54px;
-
-        height:54px;
-
+    .shopping-assistant-body {
+        padding: 14px;
     }
 
-}
 
-/* ==========================================================
-   Dark Scrollbar
-========================================================== */
+    /* -----------------------------------------
+       Assistant Message
+    ----------------------------------------- */
 
-.shopping-chat-body{
+    .shopping-assistant-message {
+        max-width: 88%;
 
-    scrollbar-width:thin;
+        padding: 12px 13px;
 
-    scrollbar-color:#D2B48C transparent;
+        border-radius: 16px 16px 5px 16px;
+    }
 
-}
+    .shopping-assistant-message p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
 
-/* ==========================================================
-   Nice Selection
-========================================================== */
 
-.shopping-chat-container *::selection{
+    /* -----------------------------------------
+       Options
+    ----------------------------------------- */
 
-    background:#8B4513;
+    .shopping-assistant-options {
+        gap: 9px;
+        margin-top: 16px;
+    }
 
-    color:white;
+    .shopping-assistant-option {
+        min-height: 46px;
 
-}
+        padding: 9px 12px;
 
-/* ==========================================================
-   Small Badge
-========================================================== */
+        font-size: 13px;
+        border-radius: 11px;
+    }
 
-.online-status{
+    .shopping-assistant-option-icon {
+        width: 32px;
+        height: 32px;
 
-    display:inline-flex;
+        border-radius: 8px;
+    }
 
-    align-items:center;
 
-    gap:6px;
+    /* -----------------------------------------
+       Footer
+    ----------------------------------------- */
 
-    font-size:12px;
+    .shopping-assistant-footer {
+        padding-top: 16px;
 
-    margin-top:4px;
+        font-size: 10px;
+    }
 
-}
 
-.online-status::before{
+    /* -----------------------------------------
+       Floating Button
+    ----------------------------------------- */
 
-    content:"";
-
-    width:8px;
-
-    height:8px;
-
-    background:#22C55E;
-
-    border-radius:50%;
-
-    display:block;
-
-}
-
-/* ==========================================================
-   Premium Glass Effect
-========================================================== */
-
-.shopping-chat-header{
-
-    backdrop-filter:blur(10px);
-
-}
-
-/* ==========================================================
-   Shadows
-========================================================== */
-
-.shopping-chat-container{
-
-    box-shadow:
-
-        0 30px 80px rgba(0,0,0,.20);
-
-}
-
-.shopping-chat-button{
-
-    box-shadow:
-
-        0 15px 35px rgba(139,69,19,.30);
-
+    .shopping-assistant-toggle {
+        width: 54px;
+        height: 54px;
+    }
 }
